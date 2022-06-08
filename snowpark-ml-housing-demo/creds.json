@@ -1,0 +1,8 @@
+{
+   "username": "<YOUR_USERNAME>",
+   "password": "<YOUR_PASSWORD>",
+   "sf_account": "<SF_ACCOUNT>",
+   "sf_wh": "<WH_NAME>",
+   "sf_db": "<DATABASE>",
+   "sf_schema": "<SCHEMA>"
+}
