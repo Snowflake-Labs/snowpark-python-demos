@@ -1,0 +1,8 @@
+{
+   "account": "x",
+   "user": "x",
+   "password": "x",
+   "database": "SUMMIT_DB",
+   "schema": "CHURN",
+   "warehouse": "BI_MEDIUM_WH"
+}
