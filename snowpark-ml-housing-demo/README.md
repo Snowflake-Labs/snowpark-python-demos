@@ -9,7 +9,7 @@ In this notebook we fit/train a Scikit-Learn ML pipeline that includes common fe
 
 We will fit/train the pipeline using a Snowpark Python Stored Procedure (SPROC) and then save the pipeline to a Snowflake stage. This example concludes by showing how a saved model/pipeline can be loaded and run in a scalable fashion on a snowflake warehouse using Snowpark Python User-Defined Functions (UDFs). 
 
-![Snowpark ML](/images/snowpark_ml.png)
+![Snowpark ML](images/snowpark_ml.png)
 
 ## 1. Create the Conda Snowpark Environment
 
@@ -53,7 +53,7 @@ In the terminal, run this command and note the path of the newly create conda en
 
 Open the notebook named `1_snowpark_housing_ingest_data.ipynb` in VS Code and in the top right corner click `Select Kernal`
 
-![Select Kernel](/images/select_kernel.png)
+![Select Kernel](images/select_kernel.png)
 
 Paste in the path to the conda env you copied earlier
 
