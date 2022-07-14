@@ -44,7 +44,7 @@ Simple introductory tutorial on Snowpark. Covers data ingestion, data science an
 
 1. Open terminal and clone this repo or use GitHub Desktop, since it is part of the snowflakecorp organisation you need to set up the authentification before cloning: 
 
-    `git clone https://github.com/Snowflake-Labs/snowpark-python-examples`
+    `git clone https://github.com/Snowflake-Labs/snowpark-python-demos`
 
 2. Change to the `Predict Customer Spend` directory and launch  JupyterLab
 
