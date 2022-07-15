@@ -55,5 +55,4 @@ Simple introductory tutorial on Snowpark. Covers data ingestion, data science an
 4. To run streamlit (ecommapp), on your terminal run  `streamlit run ecommapp.py`
    Here's what the app will look like:
    
-
-
+![ecommapp](https://user-images.githubusercontent.com/1723932/179316941-87b298f2-43de-4635-a0b1-bdc68f059605.png)
