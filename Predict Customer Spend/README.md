@@ -51,6 +51,9 @@ Simple introductory tutorial on Snowpark. Covers data ingestion, data science an
     `jupyter lab`
 
 3. Paste the URL in a browser window and once JupyterLab comes up, switch to the work directory and update `creds_generic.json` and rename it to `creds.json` to reflect your snowflake environment.
- 4. To run streamlit (ecommapp), on your terminal run  `streamlit run ecommapp.py`
+
+4. To run streamlit (ecommapp), on your terminal run  `streamlit run ecommapp.py`
+   Here's what the app will look like:
+   
 
 
