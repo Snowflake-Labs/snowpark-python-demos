@@ -12,7 +12,11 @@ In this demo, we will be leveraging Python Stored Procedures.
 ## 2. Prerequisite
 
 * Snowflake account
-* Snowpark for Python
+
+* Snowpark for Python in your local machine
+
+Please follow the instructions to install Snowpark: https://docs.snowflake.com/en/developer-guide/snowpark/python/setup.html#installation-instructions
+
 * The examples also use the following Python libraries:
    ```
    json
