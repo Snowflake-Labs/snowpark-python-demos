@@ -36,7 +36,7 @@ This code also leverages functions defined in the sp4py repo: https://github.com
 ```
 CREATE STAGE CHURN_SOURCE_DATA 
 storage_integration = <your_storage_integration>
-  url = 's3://<your bucket>/churn_analysis'
+  url = 's3://<your bucket>'
   file_format = (type=CSV);
  ```
 
