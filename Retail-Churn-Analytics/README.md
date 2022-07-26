@@ -29,7 +29,7 @@ In this demo, we will be leveraging Python Stored Procedures.
 This code also leverages functions defined in the sp4py repo: https://github.com/Snowflake-Labs/snowpark-python-examples/tree/main/sp4py_utilities
 
 * Jupyter or JupyterLab
-* Upload the 3 CSV files in /data into an external stage (e.g S3). In the object store, create 3 directories /customer, /order, /comm_hist and upload the source files src_customer.csv, src_order.csv, src_comm_hist.csv respectively to each of these 3 subdirectories. 
+* Upload the 3 CSV files in /data into an external stage (e.g S3). In the object store, create 3 directories /customer, /order, /comm_hist and upload the source files src_customer.csv, src_order.csv, src_comm_hist.csv respectively to each of these 3 directories. 
 
 * Create a storage integration and a stage (e.g. churn_source_data) using the documentation (https://docs.snowflake.com/en/sql-reference/sql/create-storage-integration.html)  and create three external tables as below:
 
