@@ -120,7 +120,7 @@ The notebook does the following...
 
 ### **Step 5** -- Run Streamlit app
 
-In a terminal window, browse to this folder where you have this file downloaded and run the [Streamlit app](https://github.com/iamontheinet/dash-at-summit-2022/blob/main/SnowparkForPythonAndStreamlit/Snowpark_Streamlit_Revenue_Prediction.py) by executing `streamlit run Snowpark_Streamlit_Revenue_Prediction.py`
+In a terminal window, browse to this folder where you have this file downloaded and run the [Streamlit app](Snowpark_Streamlit_Revenue_Prediction.py) by executing `streamlit run Snowpark_Streamlit_Revenue_Prediction.py`
 
 If all goes well, you should the following app in your browser window.
 
