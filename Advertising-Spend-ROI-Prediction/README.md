@@ -4,7 +4,7 @@ This is the same demo that was presented during the [Snowflake Summit Opening Ke
 
 ## Prereq
 
-* Access to Snowflake account
+* Access to a [Snowflake account](https://signup.snowflake.com/)
 
 ## Setup
 
