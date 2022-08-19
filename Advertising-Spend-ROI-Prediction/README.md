@@ -1,4 +1,4 @@
-# Snowpark For Python And Streamlit -- Advertising Spend and ROI Prediction
+# Snowpark For Python & Streamlit: Advertising Spend and ROI Prediction
 
 This is the same demo that was presented during the [Snowflake Summit Opening Keynote](https://events.snowflake.com/summit/agenda/session/849836).
 
