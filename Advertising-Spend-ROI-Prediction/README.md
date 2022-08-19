@@ -8,7 +8,7 @@ This is the same demo that was presented during the [Snowflake Summit Opening Ke
 
 ## Setup
 
-### **Step 1** -- Create Tables, Users, Roles
+### **Step 1** -- Create Tables and Stages
 
 * Create table CAMPAIGN_SPEND from data hosted on publicly accessible S3 bucket
 
