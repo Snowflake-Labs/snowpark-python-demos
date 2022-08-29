@@ -2,13 +2,14 @@
 
 This is the same demo that was presented during the [Snowflake Summit Opening Keynote](https://events.snowflake.com/summit/agenda/session/849836). It is built using Snowpark For Python and Streamlit. For questions and feddback, please reach out to <dash.desai@snowflake.com>.
 
-## Prereq
+## Prerequisites
 
-* Access to a [Snowflake account](https://signup.snowflake.com/)
+* [Snowflake account](https://signup.snowflake.com/) with ACCOUNTADMIN role
+  * [Warehouse](https://docs.snowflake.com/en/sql-reference/sql/create-warehouse.html), [Database](https://docs.snowflake.com/en/sql-reference/sql/create-database.html) and a [Schema](https://docs.snowflake.com/en/sql-reference/sql/create-schema.html)
 
 ## Setup
 
-### **Step 1** -- Create Tables and Stages
+### **Step 1** -- Create Tables, Load Data and Setup Stages
 
 * Create table CAMPAIGN_SPEND from data hosted on publicly accessible S3 bucket
 
@@ -83,7 +84,7 @@ This is the same demo that was presented during the [Snowflake Summit Opening Ke
 
 ## Notebook and Streamlit App
 
-### **Step 1** -- Create Conda Environment
+### **Step 1** -- Create And Activate Conda Environment
 
 * `pip install conda`
 
@@ -91,9 +92,9 @@ This is the same demo that was presented during the [Snowflake Summit Opening Ke
   
 * `conda create --name snowpark -c https://repo.anaconda.com/pkgs/snowflake python=3.8`
 
-### **Step 2** -- Install Snowpark for Python and other libraries in Conda environment
-
 * `conda activate snowpark`
+
+### **Step 2** -- Install Snowpark for Python and other libraries in Conda environment
 
 * `pip install "snowflake-snowpark-python[pandas]"`
 
@@ -103,7 +104,7 @@ This is the same demo that was presented during the [Snowflake Summit Opening Ke
 
 * `pip install scikit-learn`
 
-### **Step 3** -- Update [connection.json](connection.json) with your Snowflake account details and "Data Science" role credentials
+### **Step 3** -- Update [connection.json](connection.json) with your Snowflake account details and credentials
 
 ### **Step 4** -- Run through the [Jupyter notebook](Snowpark_For_Python.ipynb)
 
