@@ -1,13 +1,22 @@
 # Advertising Spend and ROI Prediction
 
-This is the same demo that was presented during the [Snowflake Summit Opening Keynote](https://events.snowflake.com/summit/agenda/session/849836). It is built using Snowpark For Python and Streamlit. For questions and feddback, please reach out to <dash.desai@snowflake.com>.
+This is the same demo that was presented during the [Snowflake Summit Opening Keynote](https://events.snowflake.com/summit/agenda/session/849836). It is built using Snowpark For Python and Streamlit. For questions and feedback, please reach out to <dash.desai@snowflake.com>.
 
 ## Prerequisites
 
-* [Snowflake account](https://signup.snowflake.com/) with ACCOUNTADMIN role
-  * [Warehouse](https://docs.snowflake.com/en/sql-reference/sql/create-warehouse.html), [Database](https://docs.snowflake.com/en/sql-reference/sql/create-database.html) and a [Schema](https://docs.snowflake.com/en/sql-reference/sql/create-schema.html)
+* [Snowflake account](https://signup.snowflake.com/)
+  * Login to your [Snowflake account](https://app.snowflake.com/) with the admin credentials that were created with the account in one browser tab (a role with ORGADMIN privileges). Keep this tab open during the workshop.
+    * Click on the **Billing** on the left side panel
+    * Click on [Terms and Billing](https://app.snowflake.com/terms-and-billing)
+    * Read and accept terms to continue with the workshop
+  * As ACCOUNTADMIN role
+    * Create a [Warehouse](https://docs.snowflake.com/en/sql-reference/sql/create-warehouse.html), a [Database](https://docs.snowflake.com/en/sql-reference/sql/create-database.html) and a [Schema](https://docs.snowflake.com/en/sql-reference/sql/create-schema.html)
 
 ## Setup
+
+  ```sql
+  USE ROLE ACCOUNTADMIN;
+  ```
 
 ### **Step 1** -- Create Tables, Load Data and Setup Stages
 
