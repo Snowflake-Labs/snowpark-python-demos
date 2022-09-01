@@ -5,7 +5,7 @@ Example of how scikit-learn preprocessing functionality can be implemented using
 
 ## 2. Prerequisite
 * Snowflake account
-* Snowpark for Python
+* Snowpark for Python version >= 0.6.0 (install through pip or conda to get latest)
 * The modules are depended on the following Python libraries:
    ```
    scipy
