@@ -27,7 +27,7 @@ transformation.
 
 In order to use the module download the **preprocessing** folder and make sure it is visible to your python environment.
 
-For more examples see the **preprocessing_demo** notebook.
+For more examples see the [**preprocessing_demo** notebook](preprocessing_demo.ipynb).
 
 #### Scalers
 The preprocessing module has the following scalers that can be used with numeric features:
@@ -77,10 +77,10 @@ encoder_input_cols = ["STATE", "AREA_CODE", "INTL_PLAN"]
 # Create a One hot encoder object that will encode the input_cols
 ohe = pp.OneHotEncoder(input_cols=encoder_input_cols)
 # Fit the values needed for the encoder for each of the input_cols
-ohe.fit(df_test)
+ohe.fit(df_churn)
 # Encode the input_cols and return the scaled values in the output_cols in the returned Snowpark DataFrame, the actual
 # encoding are not done until a action method is called ie show(), collect() etc.
-ohe_tr_df = ohe.transform(df_test)
+ohe_tr_df = ohe.transform(df_churn)
 ```
 ### UDF Transform
 A module for using the fitted scalers/encoders created with the preprocessing module in Python UDFs.
@@ -88,7 +88,7 @@ A module for using the fitted scalers/encoders created with the preprocessing mo
 In order to use the module download the **udf_transform** folder and make sure it is visible to your python environment 
 and if using it for Python UDFs you also need to upload it to Snowflake, the simplest way is by using **add_imports**
 
-For more examples see the **udf_transform_demo** notebook.
+For more examples see the [**udf_transform_demo** notebook](udf_transform_demo.ipynb).
 
 The module has the following functions:
 * udf_minmax_transform
