@@ -93,17 +93,23 @@ This is the same demo that was presented during the [Snowflake Summit Opening Ke
 
 ## Notebook and Streamlit App
 
-### **Step 1** -- Create And Activate Conda Environment
+### **Step 1** -- CLone Repo
+
+* `git clone https://github.com/Snowflake-Labs/snowpark-python-demos` OR `git clone git@github.com:Snowflake-Labs/snowpark-python-demos.git`
+
+* `cd Advertising-Spend-ROI-Prediction`
+
+### **Step 2** -- Create And Activate Conda Environment
+
+(OR, you may use any other Python environment with Python 3.8) 
 
 * `pip install conda`
-
-  * ***NOTE***: The other option is to use [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
   
 * `conda create --name snowpark -c https://repo.anaconda.com/pkgs/snowflake python=3.8`
 
 * `conda activate snowpark`
 
-### **Step 2** -- Install Snowpark for Python and other libraries in Conda environment
+### **Step 3** -- Install Snowpark for Python and other libraries in Conda environment
 
 * `pip install "snowflake-snowpark-python[pandas]"`
 
@@ -113,9 +119,9 @@ This is the same demo that was presented during the [Snowflake Summit Opening Ke
 
 * `pip install scikit-learn`
 
-### **Step 3** -- Update [connection.json](connection.json) with your Snowflake account details and credentials
+### **Step 4** -- Update [connection.json](connection.json) with your Snowflake account details and credentials
 
-### **Step 4** -- Run through the [Jupyter notebook](Snowpark_For_Python.ipynb)
+### **Step 5** -- Run through the [Jupyter notebook](Snowpark_For_Python.ipynb)
 
 In a terminal window, browse to the folder where you have this Notebook downloaded and run `jupyter notebook`
 
@@ -128,7 +134,7 @@ The notebook does the following...
 * Creates a User-Defined Function (UDF) that uses the model for inference on new data points passed in as parameters
   * NOTE: This UDF is called from the Streamlit app
 
-### **Step 5** -- Run Streamlit app
+### **Step 6** -- Run Streamlit app
 
 In a terminal window, browse to this folder where you have this file downloaded and run the [Streamlit app](Snowpark_Streamlit_Revenue_Prediction.py) by executing `streamlit run Snowpark_Streamlit_Revenue_Prediction.py`
 
