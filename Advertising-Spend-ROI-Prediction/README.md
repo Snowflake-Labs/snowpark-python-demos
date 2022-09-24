@@ -2,6 +2,21 @@
 
 This is the same demo that was presented during the [Snowflake Summit Opening Keynote](https://events.snowflake.com/summit/agenda/session/849836). It is built using Snowpark For Python and Streamlit. For questions and feedback, please reach out to <dash.desai@snowflake.com>.
 
+## Overview
+
+In this workshop, we will train a Linear Regression model to predict future ROI (Return On Investment) of variable advertising spend budgets across multiple channels including search, video, social media, and email using Snowpark for Python and scikit-learn. By the end of the session, you will have an interactive web application deployed visualizing the ROI of different allocated advertising spend budgets.
+
+Workshop highlights:
+
+* Set up your favorite IDE (e.g. Jupyter, VSCode) for Snowpark and ML
+* Analyze data and perform data engineering tasks using Snowpark DataFrames
+* Use open-source Python libraries from a curated Anaconda channel with near-zero maintenance or overhead
+* Deploy ML model training code to Snowflake using Python Stored Procedures
+* Create and register Python User-Defined Functions (UDFs) for inference
+* Create Streamlit web application that uses the UDF for real-time prediction
+
+https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a271-4650c47d8e34.mp4
+
 ## Prerequisites
 
 * [Snowflake account](https://signup.snowflake.com/)
