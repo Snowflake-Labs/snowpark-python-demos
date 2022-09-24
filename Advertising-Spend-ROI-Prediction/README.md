@@ -15,7 +15,11 @@ Workshop highlights:
 * Create and register Python User-Defined Functions (UDFs) for inference
 * Create Streamlit web application that uses the UDF for real-time prediction
 
+If all goes well, you should see the following app in your browser window.
+
 https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a271-4650c47d8e34.mp4
+
+NOTE: The accompanying slides can be found [here](https://github.com/Snowflake-Labs/snowpark-python-demos/blob/main/Advertising-Spend-ROI-Prediction/PyCon_2022_Snowpark_for_Python_Streamlit_Workshop_Dash.pdf).
 
 ## Prerequisites
 
@@ -153,6 +157,6 @@ The notebook does the following...
 
 In a terminal window, browse to this folder where you have this file downloaded and run the [Streamlit app](Snowpark_Streamlit_Revenue_Prediction.py) by executing `streamlit run Snowpark_Streamlit_Revenue_Prediction.py`
 
-If all goes well, you should the following app in your browser window.
+If all goes well, you should see the following app in your browser window.
 
 https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a271-4650c47d8e34.mp4
