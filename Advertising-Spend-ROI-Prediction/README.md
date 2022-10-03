@@ -4,7 +4,7 @@ This is the same demo that was presented during the [Snowflake Summit Opening Ke
 
 ## Overview
 
-In this workshop, we will train a Linear Regression model to predict future ROI (Return On Investment) of variable advertising spend budgets across multiple channels including search, video, social media, and email using Snowpark for Python and scikit-learn. By the end of the session, you will have an interactive web application deployed visualizing the ROI of different allocated advertising spend budgets.
+In this workshop, we will train a Linear Regression model to predict future ROI (Return On Investment) of variable advertising spend budgets across multiple channels including search, video, social media, and email using Snowpark for Python and scikit-learn. By the end of the session, you will have an interactive web application deployed visualizing the ROI of different allocated advertising spend budgets. NOTE: The accompanying slides can be found [here](https://github.com/Snowflake-Labs/snowpark-python-demos/blob/77f54633f850c66053dfa055c82a7fc6dec8deca/Advertising-Spend-ROI-Prediction/Snowpark%20for%20Python%20And%20Streamlit%20ML%20Workshop.pdf).
 
 Workshop highlights:
 
@@ -18,8 +18,6 @@ Workshop highlights:
 If all goes well, you should see the following app in your browser window.
 
 https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a271-4650c47d8e34.mp4
-
-NOTE: The accompanying slides can be found [here](https://github.com/Snowflake-Labs/snowpark-python-demos/blob/main/Advertising-Spend-ROI-Prediction/PyCon_2022_Snowpark_for_Python_Streamlit_Workshop_Dash.pdf).
 
 ## Prerequisites
 
