@@ -136,9 +136,11 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
 
 * `pip install scikit-learn`
 
+* `pip install cachetools`
+
 ### **Step 4** -- Update [connection.json](connection.json) with your Snowflake account details and credentials
 
-NOTE: For the **account** parameter, specify your [account identifier](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html) and do not include the snowflakecomputing.com domain name. Snowflake automatically appends this when creating the connection.
+* NOTE: For the **account** parameter, specify your [account identifier](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html) and do not include the snowflakecomputing.com domain name. Snowflake automatically appends this when creating the connection.
 
 ### **Step 5** -- Train & deploy ML model
 
@@ -156,8 +158,8 @@ The notebook does the following...
 
 ### **Step 6** -- Run Streamlit app
 
-In a terminal window, browse to this folder where you have this file downloaded and run the [Streamlit app](Snowpark_Streamlit_Revenue_Prediction.py) by executing `streamlit run Snowpark_Streamlit_Revenue_Prediction.py`
+* In a terminal window, browse to this folder where you have this file downloaded and run the [Streamlit app](Snowpark_Streamlit_Revenue_Prediction.py) by executing `streamlit run Snowpark_Streamlit_Revenue_Prediction.py`
 
-If all goes well, you should see the following app in your browser window.
+* If all goes well, you should see the following app in your browser window.
 
 https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a271-4650c47d8e34.mp4
