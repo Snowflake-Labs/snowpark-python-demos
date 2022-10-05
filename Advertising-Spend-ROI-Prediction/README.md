@@ -140,9 +140,10 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
 
 NOTE: For the **account** parameter, specify your [account identifier](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html) and do not include the snowflakecomputing.com domain name. Snowflake automatically appends this when creating the connection.
 
-### **Step 5** -- Run through the [Jupyter notebook](Snowpark_For_Python.ipynb)
+### **Step 5** -- Train & deploy ML model
 
-In a terminal window, browse to the folder where you have this Notebook downloaded and run `jupyter notebook`
+* In a terminal window, browse to the folder where you have this Notebook downloaded and run `jupyter notebook` at the command line
+* Open and run through the [Jupyter notebook](Snowpark_For_Python.ipynb)
 
 The notebook does the following...
 
