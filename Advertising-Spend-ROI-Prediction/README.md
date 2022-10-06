@@ -126,7 +126,7 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
 
 * `conda activate snowpark`
 
-### **Step 3** -- Install Snowpark for Python and other libraries in Conda environment
+### **Step 3** -- Install Snowpark for Python, Streamlit and other libraries in Conda environment
 
 * `pip install "snowflake-snowpark-python[pandas]"`
 
@@ -137,6 +137,8 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
 * `pip install scikit-learn`
 
 * `pip install cachetools`
+
+* `pip install streamlit`
 
 ### **Step 4** -- Update [connection.json](connection.json) with your Snowflake account details and credentials
 
@@ -155,6 +157,7 @@ The notebook does the following...
 * Calls the Stored Proc to train the model
 * Creates Scalar and Vectorized User-Defined Functions (UDFs) that use the model for inference on new data points passed in as parameters
   * NOTE: The Scalar UDF is called from the below Streamlit app for real-time inference on new budget allocations based on user input
+* Creates a Snowflake Task to automate (re)training of the model
 
 ### **Step 6** -- Run Streamlit app
 
