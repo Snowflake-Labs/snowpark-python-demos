@@ -10,9 +10,10 @@ Workshop highlights:
 
 * Set up your favorite IDE (e.g. Jupyter, VSCode) for Snowpark and ML
 * Analyze data and perform data engineering tasks using Snowpark DataFrames
-* Use open-source Python libraries from a curated Anaconda channel with near-zero maintenance or overhead
-* Deploy ML model training code to Snowflake using Python Stored Procedures
-* Create and register Python User-Defined Functions (UDFs) for inference
+* Use open-source Python libraries from a curated Snowflake Anaconda channel with near-zero maintenance or overhead
+* Deploy ML model training code on Snowflake using Python Stored Procedure
+* Create and register Scalar and Vectorized Python User-Defined Functions (UDFs) for inference
+* Create Snowflake Task to automate (re)training of the model
 * Create Streamlit web application that uses the Scalar UDF for real-time inference on new data points based on user input
 
 If all goes well, you should see the following app in your browser window.
