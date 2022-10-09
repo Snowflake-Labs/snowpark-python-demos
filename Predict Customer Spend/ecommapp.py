@@ -87,4 +87,4 @@ with col3:
     st.markdown("---")
     st.write("\nThe biggest drivers of customer spend are:")
     st.markdown('* **Length of Membership** \n * **Time on App**')
-    st.write("You can see spend range change more when one of these two variables is changed.")
+    st.write("You can see spend range change much more when one of these two variables is changed.")
