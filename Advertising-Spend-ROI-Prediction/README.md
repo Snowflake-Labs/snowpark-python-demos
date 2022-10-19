@@ -129,26 +129,17 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
 
 ### **Step 3** -- Install Snowpark for Python, Streamlit and other libraries in Conda environment
 
-* `pip install "snowflake-snowpark-python[pandas]"`
-
-* `pip install notebook`
-
-* `pip install ipykernel`
-
-* `pip install scikit-learn`
-
-* `pip install cachetools`
-
-* `pip install streamlit`
+* `conda install -c https://repo.anaconda.com/pkgs/snowflake snowflake-snowpark-python pandas notebook scikit-learn cachetools streamlit`
 
 ### **Step 4** -- Update [connection.json](connection.json) with your Snowflake account details and credentials
 
-* NOTE: For the **account** parameter, specify your [account identifier](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html) and do not include the snowflakecomputing.com domain name. Snowflake automatically appends this when creating the connection.
+  * Note: For the **account** parameter, specify your [account identifier](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html) and do not include the snowflakecomputing.com domain name. Snowflake automatically appends this when creating the connection.
 
 ### **Step 5** -- Train & deploy ML model
 
 * In a terminal window, browse to the folder where you have this Notebook downloaded and run `jupyter notebook` at the command line
 * Open and run through the [Jupyter notebook](Snowpark_For_Python.ipynb)
+  * Note: Make sure the Jupyter notebook (Python) kernel is set to ***snowpark***
 
 The notebook does the following...
 
@@ -157,7 +148,7 @@ The notebook does the following...
 * Creates a Stored Proc for training a ML model and uploads the model to a Snowflake stage
 * Calls the Stored Proc to train the model
 * Creates Scalar and Vectorized User-Defined Functions (UDFs) that use the model for inference on new data points passed in as parameters
-  * NOTE: The Scalar UDF is called from the below Streamlit app for real-time inference on new budget allocations based on user input
+  * Note: The Scalar UDF is called from the below Streamlit app for real-time inference on new budget allocations based on user input
 * Creates a Snowflake Task to automate (re)training of the model
 
 ### **Step 6** -- Run Streamlit app
