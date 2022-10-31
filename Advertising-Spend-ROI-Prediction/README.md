@@ -119,9 +119,8 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
 
 ### **Step 2** -- Create And Activate Conda Environment
 
-(OR, you may use any other Python environment with Python 3.8) 
-
-* `pip install conda`
+* Note: You can download the miniconda installer from
+https://conda.io/miniconda.html. OR, you may use any other Python environment with Python 3.8
   
 * `conda create --name snowpark -c https://repo.anaconda.com/pkgs/snowflake python=3.8`
 
@@ -133,7 +132,7 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
 
 ### **Step 4** -- Update [connection.json](connection.json) with your Snowflake account details and credentials
 
-  * Note: For the **account** parameter, specify your [account identifier](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html) and do not include the snowflakecomputing.com domain name. Snowflake automatically appends this when creating the connection.
+* Note: For the **account** parameter, specify your [account identifier](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html) and do not include the snowflakecomputing.com domain name. Snowflake automatically appends this when creating the connection.
 
 ### **Step 5** -- Train & deploy ML model
 
