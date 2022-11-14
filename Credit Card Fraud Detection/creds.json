@@ -1,8 +1,0 @@
-{
-  "account": "YOUR SNOWFLAKE ACCOUNT",
-  "user": "YOUR SNOWFLAKE USER",
-  "password": "YOUR PASSWORD",
-  "warehouse": "YOUR WAREHOUSE",
-  "database": "YOUR DATABASE",
-  "schema": "YOUR SCHEMA"
-}
