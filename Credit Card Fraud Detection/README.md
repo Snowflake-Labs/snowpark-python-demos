@@ -3,22 +3,23 @@
 ## 1. Overview
 This example is based on the Machine Learning for Credit Card Fraud detection - Practical handbook, https://fraud-detection-handbook.github.io/fraud-detection-handbook/
 
-It shows how to do Feature Enginerring with Snowpark, preparing data for training a Machin Leraning model and finaly how to deploy and use a trained model in Snowflake using Python UDF.
+It shows how to do Feature Engineering with Snowpark, preparing data for training a Machine Learning model and finaly how to deploy and use a trained model in Snowflake using Python UDF.
 
 
 ## 2. Prerequisite
 
 * Snowflake account
-* Snowpark for Python
+* Snowpark for Python version 0.12.0 or later
 * The examples also use the following Python libraries:
    ```
-   scikit-learn
-   pandas
+   scikit-learn==1.1.1
+   pandas==1.3.2
+   joblib==1.1.0
+   cachetools==4.2.2
    numpy
    matplotlib
    ```
 * Jupyter or JupyterLab
-
 ## 3. What you'll learn
 * How to use Snowpark for Python for doing Feature Engineering
 * How you can create a custom sampling functioand with Snowpark for Python
@@ -26,15 +27,15 @@ It shows how to do Feature Enginerring with Snowpark, preparing data for trainin
 
 ## 4. Usage/Steps
 
-1. Open terminal and clone this repo or use GitHub Desktop, since it is part of the snowflakecorp organisation you need to set up the authentification before cloning: 
+1. Open terminal and clone this repo or use GitHub Desktop: 
 
-    `git clone https://github.com/Snowflake-Labs/snowpark-python-examples`
+    `git clone https://github.com/Snowflake-Labs/snowpark-python-demos`
 
-2. Change to the `Credit Card Fraud Detection` directory and launch  JupyterLab
+2. Change to the `Credit Card Fraud Detection` directory and launch JupyterLab
 
     `jupyter lab`
 
-6. Paste the URL in a browser window and once JupyterLab comes up, switch to the work directory and update `creds.json` to reflect your snowflake environment.
+6. Paste the URL in a browser window and once JupyterLab comes up, switch to the work directory.
 
 In order to load data you can either run the `00 - Snowpark Python - Load Data.ipynb` notebook.
 
