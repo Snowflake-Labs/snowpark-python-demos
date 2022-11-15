@@ -4,7 +4,7 @@
 
 In this example, you will be able to use Snowpark for Python, along with your favorite python libraries for data analysis and visualization, as well as the popular scikit learn ML library to address an end to end machine learning use case.
 
-![Snowpark ML Data FLow](images/oan_ML_data_flow.png)
+![Snowpark ML Data FLow](images/Loan_ML_data_flow.png)
 
 ## 2. Prerequisite
 
