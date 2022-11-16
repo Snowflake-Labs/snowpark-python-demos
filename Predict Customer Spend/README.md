@@ -42,6 +42,14 @@ Simple introductory tutorial on Snowpark. Covers data ingestion, data science an
     
 # Usage/Steps
 
+Refer to this Hex notebook/app that compares 3 regression methods and implements the best one: [Predicting Customer Spend - Regression](https://app.hex.tech/snowflake/app/5f29ae86-949b-40cf-bbe0-152037d0d9ef/latest)
+
+
+<img src = "/resources/hex_screenshot.png" width="500">
+
+
+Alternatively, to run locally, 
+
 1. Open terminal and clone this repo or use GitHub Desktop, since it is part of the snowflakecorp organisation you need to set up the authentification before cloning: 
 
     `git clone https://github.com/Snowflake-Labs/snowpark-python-demos`
