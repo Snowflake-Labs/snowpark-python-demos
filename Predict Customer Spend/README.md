@@ -45,7 +45,7 @@ Simple introductory tutorial on Snowpark. Covers data ingestion, data science an
 Refer to this Hex notebook/app that compares 3 regression methods and implements the best one: [Predicting Customer Spend - Regression](https://app.hex.tech/snowflake/app/5f29ae86-949b-40cf-bbe0-152037d0d9ef/latest)
 
 
-![hexapp]("https://github.dev/Snowflake-Labs/snowpark-python-demos/blob/d7aa557c348f16cd1e523564751344a2c81c1686/Predict%20Customer%20Spend/resources/hex_screenshot.png")
+![hexapp](https://github.com/Snowflake-Labs/snowpark-python-demos/blob/ff6f63fea1addd0246354583c9ceaebddd367533/Predict%20Customer%20Spend/resources/hex_screenshot.png?raw=true)
 
 
 Alternatively, to run locally, 
