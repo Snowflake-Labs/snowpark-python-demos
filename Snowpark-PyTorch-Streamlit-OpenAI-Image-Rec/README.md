@@ -37,9 +37,9 @@ https://conda.io/miniconda.html. ***(OR, you may use any other Python environmen
 
 * `conda install -c https://repo.anaconda.com/pkgs/snowflake snowflake-snowpark-python pandas streamlit notebook cachetools`
 
-### **Step 4** -- Create Snowflake table and internal stage
+### **Step 4** -- Create table and internal stage
 
-* In your Snowflake account, create a table and internal stage by running the following commands in Snowsight. ***(The table will store image data and the stage is the location for storing Snowpark Python UDF.)***
+* In your Snowflake account, create a table and internal stage by running the following commands in Snowsight. ***(The table will store image data and the stage is for storing serialized Snowpark Python UDF code.)***
 
 ```sql
 create or replace table images (file_name string, image_bytes string);
