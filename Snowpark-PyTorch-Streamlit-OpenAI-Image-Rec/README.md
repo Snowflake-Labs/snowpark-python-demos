@@ -69,7 +69,7 @@ create or replace stage dash_files;
 
 ### **Step 4** -- Run Application Variation 2 - OpenAI Generated image
 
-* In a terminal window, execute `streamlit run Snowpark_PyTorch_Streamlit_OpenAI_Image_Rec.py` command folder ***Snowpark-PyTorch-Streamlit-OpenAI-Image-Rec***.
+* In a terminal window, execute `streamlit run Snowpark_PyTorch_Streamlit_OpenAI_Image_Rec.py` command from folder ***Snowpark-PyTorch-Streamlit-OpenAI-Image-Rec***.
 
 * If all goes well, you should see the following app in your browser window.
 
