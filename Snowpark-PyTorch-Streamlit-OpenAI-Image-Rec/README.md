@@ -6,6 +6,8 @@ In this demo, we will review how to build image recognition apps in Snowflake us
 
 ***NOTE: All necessary model files are included in this repo and I'd also like to take this moment and extend a huge thank you to the [authors](https://github.com/d-li14/mobilenetv3.pytorch#citation) for the research and making the pre-trained models available under [MIT License](https://github.com/d-li14/mobilenetv3.pytorch/blob/master/LICENSE).)***
 
+For questions and feedback, please reach out to [Dash](https://twitter.com/iamontheinet).
+
 ## Prerequisites
 
 * [Snowflake account](https://signup.snowflake.com/)
@@ -74,7 +76,3 @@ create or replace stage dash_files;
 * If all goes well, you should see the following app in your browser window.
 
 ![Image Recognition app in Snowflake using Snowpark Python, PyTorch, Streamlit and OpenAI](assets/app2.png "Image Recognition app in Snowflake using Snowpark Python, PyTorch, Streamlit and OpenAI")
-
----
-
-For questions and feedback, please reach out to [Dash](https://twitter.com/iamontheinet).
