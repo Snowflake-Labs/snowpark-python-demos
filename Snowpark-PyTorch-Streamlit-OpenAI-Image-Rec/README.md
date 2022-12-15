@@ -27,7 +27,7 @@ In this demo, we will review how to build image recognition apps in Snowflake us
 ### **Step 2** -- Create and activate Conda environment
 
 * Note: You can download the miniconda installer from
-https://conda.io/miniconda.html. OR, you may use any other Python environment with Python 3.8
+https://conda.io/miniconda.html. ***(OR, you may use any other Python environment with Python 3.8.)***
   
 * `conda create --name snowpark -c https://repo.anaconda.com/pkgs/snowflake python=3.8`
 
@@ -39,7 +39,7 @@ https://conda.io/miniconda.html. OR, you may use any other Python environment wi
 
 ### **Step 4** -- Create Snowflake table and internal stage
 
-* In your Snowflake account, create a table and Snowflake internal stage by running the following commands in Snowsight. (The table will store image data and the stage is the location for storing Snowpark Python UDF.)
+* In your Snowflake account, create a table and internal stage by running the following commands in Snowsight. ***(The table will store image data and the stage is the location for storing Snowpark Python UDF.)***
 
 ```sql
 create or replace table images (file_name string, image_bytes string);
@@ -55,21 +55,21 @@ create or replace stage dash_files;
 
 ### **Step 2** -- Create Snowpark Python User-Defined Function using PyTorch
 
-* In a terminal window, run `jupyter notebook` at the command line from the root folder of this app ***Snowpark-PyTorch-Streamlit-OpenAI-Image-Rec***.
+* In a terminal window, run `jupyter notebook` at the command line from folder ***Snowpark-PyTorch-Streamlit-OpenAI-Image-Rec***.
 * Open and run through the [Jupyter notebook](Snowpark_PyTorch_Image_Rec.ipynb)
   * Note: Make sure the Jupyter notebook Python kernel is set to ***snowpark***
 
 ### **Step 3** -- Run Application Variation 1 - Upload an image
 
-* In a terminal window, execute `streamlit run Snowpark_PyTorch_Streamlit_Upload_Image_Rec.py` command from the root folder of this app ***Snowpark-PyTorch-Streamlit-OpenAI-Image-Rec***.
+* In a terminal window, execute `streamlit run Snowpark_PyTorch_Streamlit_Upload_Image_Rec.py` command from folder ***Snowpark-PyTorch-Streamlit-OpenAI-Image-Rec***.
 
 * If all goes well, you should see the following app in your browser window.
 
 ![Image Recognition app in Snowflake using Snowpark Python, PyTorch and Streamlit](assets/app1.png "Image Recognition app in Snowflake using Snowpark Python, PyTorch and Streamlit")
 
-### **Step 4** -- Run Application Variation 1 - OpenAI Generated image
+### **Step 4** -- Run Application Variation 2 - OpenAI Generated image
 
-* In a terminal window, execute `streamlit run Snowpark_PyTorch_Streamlit_OpenAI_Image_Rec.py` command from the root folder of this app ***Snowpark-PyTorch-Streamlit-OpenAI-Image-Rec***.
+* In a terminal window, execute `streamlit run Snowpark_PyTorch_Streamlit_OpenAI_Image_Rec.py` command folder ***Snowpark-PyTorch-Streamlit-OpenAI-Image-Rec***.
 
 * If all goes well, you should see the following app in your browser window.
 
