@@ -1,0 +1,24 @@
+name: pysnowpark-ml-streamlit
+channels:
+  - https://repo.anaconda.com/pkgs/snowflake
+  - nodefaults
+dependencies:
+  - python=3.8
+  - snowflake-snowpark-python[pandas]>=0.10.0
+  - pandas
+  - numpy
+  - scikit-learn
+  - xgboost 
+  - lightgbm
+  - scipy
+  - seaborn
+  - matplotlib
+  - cachetools
+  - pip
+  - notebook
+  - pip:
+    - imbalanced-learn
+    - optuna
+    - streamlit
+    - streamlit-echarts
+    - streamlit-option-menu
