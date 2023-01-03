@@ -1,0 +1,9 @@
+{
+  "account": "xxxx.eu-central-1",
+  "user": "xxxx",
+  "password": "xxxx",
+  "role": "ACCOUNTADMIN"
+  "warehouse": "HOL_WH",
+  "database": "HEART_DB",
+  "schema": "PUBLIC"
+}
