@@ -1,8 +1,9 @@
 from typing import Tuple, Union, List, Optional, Dict
 
-from snowflake.snowpark import DataFrame
+from snowflake.snowpark import DataFrame, Session
 import snowflake.snowpark.functions as F
 # from snowflake.snowpark import types as T
+from snowflake.snowpark.context import get_active_session
 import json
 
 from ._utilities import _check_fitted, _generate_udf_encoder, _columns_in_dataframe
@@ -258,6 +259,20 @@ class OneHotEncoder:
 
         return _generate_udf_encoder(self)
 
+    def deploy_as_function(self, session: Session, udf_name: str, udf_stage: str, permanent=True, udtf=False):
+        _check_fitted(self)
+
+        # Check that we have all parameters
+
+        """
+        def udf_transformer:
+                
+            
+        """
+        F.udf()
+
+        return "Will deploy your fitted transformer as a UDF"
+
 
 class OrdinalEncoder:
     def __init__(
@@ -414,7 +429,7 @@ class LabelEncoder:
         input_col = self.input_cols
         self.fitted_values_ = _get_categories(df, "auto",[input_col])
 
-        return self.fitted_values_
+        return self
 
     def transform(self, df: DataFrame):
 
