@@ -5,7 +5,7 @@ Example of how scikit-learn preprocessing functionality can be implemented using
 
 ## 2. Prerequisite
 * Snowflake account
-* Snowpark for Python version >= 0.6.0 (install through pip or conda to get latest)
+* Snowpark for Python version >= 0.12.0 (install through pip or conda to get latest)
 * The modules are depended on the following Python libraries:
    ```
    scipy
@@ -25,12 +25,12 @@ library with fit, transform etc methods and mostly the same parameters.
 If the fitted scaler/encoder is to be used with a Python UDF then the **udf_transform** module needs to be used for the 
 transformation.
 
-In order to use the module download the **preprocessing** folder and make sure it is visible to your python environment.
+In order to use the module download the **sp4py_preprocessing** folder and make sure it is visible to your python environment.
 
 For more examples see the [**preprocessing_demo** notebook](preprocessing_demo.ipynb).
 
 #### Scalers
-The preprocessing module has the following scalers that can be used with numeric features:
+The sp4py_preprocessing module has the following scalers that can be used with numeric features:
 * MinMaxScaler: Transform each column by scaling each feature to a given range.
 * StandardScaler: Standardize features by removing the mean and scaling to unit variance.
 * MaxAbsScaler: Scale each column by its maximum absolute value.
@@ -40,7 +40,7 @@ The preprocessing module has the following scalers that can be used with numeric
 
 Example using the MinMaxScaler
 ```
-import preprocessing as pp
+import sp4py_preprocessing as pp
 
 session = Session.builder.configs(connection_parameters).create()
 df_housing = session.table("california_housing")
@@ -60,14 +60,14 @@ mms_tr_df = mms.transform(df_housing)
 ```
 
 #### Encoders
-The preprocessing module has the following encoders that can be used with categorical features:
+The sp4py_preprocessing module has the following encoders that can be used with categorical features:
 * OneHotEncoder: Encode categorical features as a one-hot.
 * OrdinalEncoder: Encodes a string column of labels to a column of label indices. The indices are in [0, number of labels].
 * LabelEncoder: A label indexer that maps a string column of labels to a column of label indices.
 
 Example using the OneHotEncoder
 ```
-import preprocessing as pp
+import sp4py_preprocessing as pp
 
 session = Session.builder.configs(connection_parameters).create()
 df_churn = session.table("CUSTOMER_CHURN")
@@ -106,7 +106,7 @@ Input data can be a list or a numpy array.
 
 Example using the udf_minmax_transform function:
 ```
-import preprocessing as pp
+import sp4py_preprocessing as pp
 import udf_transform as ut
 
 session = Session.builder.configs(connection_parameters).create()
