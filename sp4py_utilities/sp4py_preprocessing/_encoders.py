@@ -1,9 +1,7 @@
-from typing import Tuple, Union, List, Optional, Dict
+from typing import Union, List, Optional, Dict
 
 from snowflake.snowpark import DataFrame, Session
 import snowflake.snowpark.functions as F
-# from snowflake.snowpark import types as T
-from snowflake.snowpark.context import get_active_session
 import json
 
 from ._utilities import _check_fitted, _generate_udf_encoder, _columns_in_dataframe
