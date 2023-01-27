@@ -64,7 +64,7 @@ predicted_roi, change = predict(budgets)
 st.metric("", f"$ {predicted_roi:.2f} million", f"{change:.1f} % vs last month")
 months = ["January", "February", "March", "April", "May", "June", "July"]
 july = pd.DataFrame({"MONTH": ["July", "July", "July", "July"], "CHANNEL": ["SEARCHENGINE", "SOCIALMEDIA", "VIDEO", "EMAIL"], "BUDGET": budgets, "ROI": [predicted_roi] * 4})
-chart_data = historical_data.append(july).reset_index(drop=True)
+chart_data = pd.concat([historical_data,july]).reset_index(drop=True)
 chart_data = chart_data.replace(["SEARCHENGINE", "EMAIL", "SOCIALMEDIA", "VIDEO"], ["Search engine", "Email", "Social media", "Video"])
 
 # Display allocations and ROI charts
