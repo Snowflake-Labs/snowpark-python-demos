@@ -12,9 +12,13 @@ This example is intended to demonstrate the use of Snowpark Python and Dynamic F
 - Machine Learning using scikit-learn python package
 - Deploying and using an ML model for scoring in Snowflake using Snowpark for Python.
 
-## 4. Usage/Steps
+## 3. Usage/Steps
 
 * Step 1: Run through the Sentiment Analysis Notebook. This will upload the required files to Snowflake, and create the database needed for this demo. Make sure to customize creds.json
 * Step 2: You can now run the Sentiment Analysis Demo.
 
 If you are using icetire, throughout this process, if you see errors about Python packages not found in your conda environment, you can simply install them through a pip command directly in the Setup notebook as shown in the Section 2. Python Librairies.
+
+## 4. Blog
+
+For more details, refer to this [blog](https://medium.com/snowflake/sentiment-analysis-using-snowpark-8cd3c2fc082d).
