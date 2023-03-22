@@ -17,3 +17,4 @@ dependencies:
   - pip:
     - jupyter
     - streamlit
+    - streamlit_option_menu
