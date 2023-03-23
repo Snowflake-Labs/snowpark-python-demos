@@ -75,7 +75,7 @@ streamlit ./streamlit/run Sentiment_Analysis_APP.py
 ```
 
 2. **Notebook** :
-Once you have setup everything and lead the data into Snowflake you can easily run the Demo using the Notebook (**Sentiment_Analysis_NLP_with_Snowpark_ML.ipynb**) as well:
+Once you have setup everything and load the data into Snowflake you can easily run the Demo using the Notebook (**Sentiment_Analysis_NLP_with_Snowpark_ML.ipynb**) as well:
 ```bash
 jupyter notebook
 ```
