@@ -43,7 +43,7 @@ Overview of the data :
 
 ## Installation
 
-1. Clone thes repository : 
+1. Clone this repository : 
 ```bash
 git clone https://github.com/snowflakecorp/gsi-workload-demo.git
 ```
