@@ -45,7 +45,7 @@ Overview of the data :
 
 1. Clone this repository : 
 ```bash
-git clone https://github.com/snowflakecorp/gsi-workload-demo.git
+git clone https://github.com/Snowflake-Labs/snowpark-python-demos.git
 ```
 2. Setup Python environment with **Snowpark** and **Streamlit** :
 ```bash
