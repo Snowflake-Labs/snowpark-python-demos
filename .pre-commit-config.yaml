@@ -10,3 +10,4 @@ repos:
     rev: 1.6.3
     hooks:
       - id: nbqa-isort
+      - id: nbqa-pyupgrade
