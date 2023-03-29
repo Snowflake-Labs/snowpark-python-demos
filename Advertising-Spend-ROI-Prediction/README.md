@@ -50,7 +50,7 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
     url = 's3://sfquickstarts/Summit 2022 Keynote Demo/campaign_spend/';
 
   CREATE or REPLACE TABLE CAMPAIGN_SPEND (
-    CAMPAIGN VARCHAR(60), 
+    CAMPAIGN VARCHAR(60),
     CHANNEL VARCHAR(60),
     DATE DATE,
     TOTAL_CLICKS NUMBER(38,0),
@@ -121,7 +121,7 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
 
 * Note: You can download the miniconda installer from
 https://conda.io/miniconda.html. OR, you may use any other Python environment with Python 3.8
-  
+
 * `conda create --name snowpark -c https://repo.anaconda.com/pkgs/snowflake python=3.8`
 
 * `conda activate snowpark`

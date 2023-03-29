@@ -18,8 +18,8 @@ In this example, you will be able to use Snowpark for Python, along with your fa
   ```
   * Step 2: This will give the URL to access the Jupyter Environment
   * Step 3: Follow instructions in the Snowflake documentation on how to install the snowpark library.
-  
-## 3. What you'll learn  
+
+## 3. What you'll learn
 
 - Get an understanding on how to implement an end-to-end ML pipeline using Snowpark for Python.
 - Develop using Snowpark for Python API, and Snowpark for Python UDFs, vectorized UDFs and Stored Procedures.

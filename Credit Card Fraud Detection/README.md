@@ -27,7 +27,7 @@ It shows how to do Feature Engineering with Snowpark, preparing data for trainin
 
 ## 4. Usage/Steps
 
-1. Open terminal and clone this repo or use GitHub Desktop: 
+1. Open terminal and clone this repo or use GitHub Desktop:
 
     `git clone https://github.com/Snowflake-Labs/snowpark-python-demos`
 
@@ -44,14 +44,14 @@ Or "manual" load it by following the steps below
 
 ```
 create or replace TABLE CUSTOMER_TRANSACTIONS_FRAUD (
- TRANSACTION_ID NUMBER,  
- TX_DATETIME TIMESTAMP_NTZ, 
- CUSTOMER_ID NUMBER, 
- TERMINAL_ID NUMBER, 
- TX_AMOUNT FLOAT, 
- TX_TIME_SECONDS NUMBER, 
- TX_TIME_DAYS NUMBER, 
- TX_FRAUD NUMBER, 
+ TRANSACTION_ID NUMBER,
+ TX_DATETIME TIMESTAMP_NTZ,
+ CUSTOMER_ID NUMBER,
+ TERMINAL_ID NUMBER,
+ TX_AMOUNT FLOAT,
+ TX_TIME_SECONDS NUMBER,
+ TX_TIME_DAYS NUMBER,
+ TX_FRAUD NUMBER,
  TX_FRAUD_SCENARIO NUMBER);
 ```
 

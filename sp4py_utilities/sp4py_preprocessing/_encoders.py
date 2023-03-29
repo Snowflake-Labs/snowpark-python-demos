@@ -264,8 +264,8 @@ class OneHotEncoder:
 
         """
         def udf_transformer:
-                
-            
+
+
         """
         F.udf()
 
