@@ -28,10 +28,10 @@ The UDTF makes use of a library called [NetworkX](https://networkx.org/) which i
 
 ## 4. Usage/Steps
 
-1. Open terminal and clone this repo. 
+1. Open terminal and clone this repo.
 
     `git clone https://github.com/Snowflake-Labs/snowpark-python-examples`
-    
+
 2. Update `creds.json` to reflect your snowflake environment.
 
 3. Change to the `Graph Analysis` directory and launch JupyterLab (or Juypter)

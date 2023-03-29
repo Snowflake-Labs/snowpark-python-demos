@@ -4,7 +4,7 @@
 
 This example is intended to demonstrate the use of Snowpark Python and Dynamic File Access to build a sentiment analysis model using product reviews. We'll then use this model to determine the sentiment if new data imported from an unstructured file in a Snowflake Stage.
 
-## 2. What you'll learn  
+## 2. What you'll learn
 
 - Get an understanding on how to implement an end-to-end ML pipeline using Snowpark for Python.
 - Develop using Snowpark for Python API, and Snowpark for Python UDFs, vectorized UDFs and Stored Procedures.

@@ -20,7 +20,7 @@ def create_session():
         session = st.session_state['snowpark_session']
     return session
 
-# Function to load last six months' budget allocations and ROI 
+# Function to load last six months' budget allocations and ROI
 @st.experimental_memo(show_spinner=False)
 def load_data():
     historical_data = session.table("BUDGET_ALLOCATIONS_AND_ROI").unpivot("Budget", "Channel", ["SearchEngine", "SocialMedia", "Video", "Email"]).filter(col("MONTH") != "July")
@@ -59,7 +59,7 @@ def predict(budgets):
     change = round((predicted_roi - last_month_roi) / last_month_roi * 100, 1)
     return predicted_roi, change
 
-# Call predict function upon user interaction -- i.e. everytime the sliders are changed -- to get a new predicted ROI 
+# Call predict function upon user interaction -- i.e. everytime the sliders are changed -- to get a new predicted ROI
 predicted_roi, change = predict(budgets)
 st.metric("", f"$ {predicted_roi:.2f} million", f"{change:.1f} % vs last month")
 months = ["January", "February", "March", "April", "May", "June", "July"]
@@ -90,7 +90,7 @@ chart = alt.layer(bars, lines + points).resolve_scale(y="independent")
 chart = chart.configure_view(strokeWidth=0).configure_axisY(domain=False).configure_axis(labelColor="#808495", tickColor="#e6eaf1", gridColor="#e6eaf1", domainColor="#e6eaf1", titleFontWeight=600, titlePadding=10, labelPadding=5, labelFontSize=14).configure_range(category=["#FFE08E", "#03C0F2", "#FFAAAB", "#995EFF"])
 st.altair_chart(chart, use_container_width=True)
 
-# Setup the ability to save user-entered allocations and predicted value back to Snowflake 
+# Setup the ability to save user-entered allocations and predicted value back to Snowflake
 submitted = st.button("❄️ Save to Snowflake")
 if submitted:
     with st.spinner("Making snowflakes..."):

@@ -8,7 +8,7 @@ dependencies:
   - pandas
   - numpy
   - scikit-learn
-  - xgboost 
+  - xgboost
   - lightgbm
   - scipy
   - seaborn

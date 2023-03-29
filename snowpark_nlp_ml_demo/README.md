@@ -10,7 +10,7 @@ Our use case is about doing : Sentiment Analysis with 100% Snowpark (feature eng
 
 The origin of the dataset i used : https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews/data
 
-Overview of the data : 
+Overview of the data :
 
 ![Screenshot 2023-03-22 at 16 10 21](https://user-images.githubusercontent.com/109098925/226949522-3b2e041a-17d6-4c35-9dd9-e54dca7a7197.png)
 
@@ -43,7 +43,7 @@ Overview of the data :
 
 ## Installation
 
-1. Clone this repository : 
+1. Clone this repository :
 ```bash
 git clone https://github.com/Snowflake-Labs/snowpark-python-demos.git
 ```
