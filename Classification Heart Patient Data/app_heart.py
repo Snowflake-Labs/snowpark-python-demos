@@ -8,6 +8,7 @@ from streamlit_option_menu import option_menu
 import json
 
 # Create Session object
+@st.cache_resource
 def create_session_object():
     
     with open('creds.json') as f:
@@ -18,7 +19,7 @@ def create_session_object():
     return session
 
 
-def train (session, table, model, cwh, cwh_size, use_optimized):
+def train (session, table, model, cwh, cwh_size, use_optimized, use_zero_copy_cloning):
 
     if (use_optimized):
         cmd = "alter warehouse " + cwh + " suspend"
@@ -31,8 +32,7 @@ def train (session, table, model, cwh, cwh_size, use_optimized):
         session.sql(cmd).collect()
     
     model_name = str.replace(model, ' ', '_')
-    session.call('internal.sf_scaler_train',model, table, 
-                 '@models', model_name, 'schema=2')
+    session.call('sf_train',model, table, '@models', model_name, use_zero_copy_cloning)
 
     if (use_optimized):
         cmd = "alter warehouse " + cwh + " suspend"
@@ -50,7 +50,7 @@ def score (session, table_orig, model_name, target_table, cwh, cwh_size, size_wh
     cmd = "alter warehouse " + cwh + " set warehouse_size = '" + size_wh + "'"
     session.sql(cmd).collect()
     
-    session.call('internal.sf_score', table_orig, target_table, '@models', model_name )
+    session.call('sf_score', table_orig, target_table, '@models', model_name )
  
     cmd = "alter warehouse " + cwh + " set warehouse_size = '" + cwh_size + "'"
     session.sql(cmd).collect()
@@ -58,7 +58,7 @@ def score (session, table_orig, model_name, target_table, cwh, cwh_size, size_wh
     
 def copy_into (session, list_files, table_name):
 
-    session.call('internal.copy_into', list_files, table_name)
+    session.call('copy_into', list_files, table_name)
 
     
 def to_pct(value):
@@ -94,7 +94,7 @@ with st.sidebar:
 
 if option == "Load Data":
     
-    data_load = session.sql('ls @internal.load_data').collect()
+    data_load = session.sql('ls @load_data').collect()
 
     st.markdown('----')
     st.subheader("Data Loading")
@@ -104,7 +104,7 @@ if option == "Load Data":
     with st.container():
         with col_files:    # data loading
             list_files = []
-            files_available = session.sql("ls @internal.load_data").collect()
+            files_available = session.sql("ls @load_data").collect()
             for f in files_available:
                 list_files.append(f["name"])
                             
@@ -114,11 +114,12 @@ if option == "Load Data":
             st.write('Files to load:', files)
 
         with col_name_table:
-            table_name = st.text_input ("Table name to be created:", value="DEFAULT")
+            table_name = "DATA." + st.text_input ("Table name to be created:", value="DEFAULT")
             st.write('Table to be created:', table_name)
 
             
         files = "@" + files
+
         st.button('Load Data', on_click=copy_into, args=(session, files, table_name))
 
     st.markdown('----')
@@ -138,9 +139,9 @@ elif option == "Analyze":
         list_tables_names = pd_tables["TABLE_NAME"].values.tolist()
         table_to_print = st.selectbox("Select table to describe statistics:", list_tables_names)
         
-        if (table_to_print):
+        if (table_to_print):      
             table_to_print = "DATA." + table_to_print
-        
+
             df_table = session.table(table_to_print)
 
             pd_table = df_table.limit(3).to_pandas()
@@ -174,6 +175,7 @@ elif option == "Train Model":
         table_to_train = st.selectbox("Select table to train model:", list_tables_names)
         
         if (table_to_train):
+            
             table_to_train = "DATA." + table_to_train
 
             with st.container():
@@ -182,7 +184,7 @@ elif option == "Train Model":
             with st.container():
                 
                 
-                df_models = session.table('internal.models').select(col("model_name"))
+                df_models = session.table('models').select(col("model_name"))
                 pd_models = df_models.to_pandas()
                     
                 model_option = st.selectbox('Choose method for training:', pd_models)
@@ -198,13 +200,15 @@ elif option == "Train Model":
                     cwh_size = session.sql(cmd).collect()
                     cwh_size = cwh_size[0]["size"]
                      
-                    col1, col2 = st.columns(2)
+                    col1, col2, col3 = st.columns(3)
                     with st.container():
                         with col1:
-                            use_optimized = st.checkbox('Use Optimized Warehouse for Large Trainings')
+                            use_zero_copy_cloning = st.checkbox('Keep a zero-copy clone of training data')
                         with col2:
+                            use_optimized = st.checkbox('Use Optimized Warehouse for Large Trainings')
+                        with col3:
                             st.button('Train Model', on_click=train, args=(session, table_to_train, 
-                                        model_option, cwh, cwh_size, use_optimized))
+                                        model_option, cwh, cwh_size, use_optimized, use_zero_copy_cloning))
  
 
         st.markdown('----')
@@ -213,7 +217,7 @@ elif option == "Model Catalog":
     
     with st.container():
   
-        df_accuracy = session.table('internal.accuracy_sum_v')
+        df_accuracy = session.table('accuracy_sum_v')
         pd_accuracy = df_accuracy.to_pandas()
 
         st.subheader('Models Catalog')
@@ -233,7 +237,7 @@ elif option == "Model Catalog":
         
         model = st.selectbox('Choose model for details:', list_models)
         
-        pd_model = session.table('internal.class_report_sumary_v')\
+        pd_model = session.table('class_report_sumary_v')\
                     .filter(col("MODEL_NAME") == model)\
                     .to_pandas()
                 
@@ -298,7 +302,7 @@ elif option == "Inference":
     
     with st.container():
         with col_select_model:
-            df_accuracy = session.table('internal.accuracy_sum_v')
+            df_accuracy = session.table('accuracy_sum_v')
             pd_accuracy = df_accuracy.to_pandas()
 
             list_models = pd_accuracy["MODEL_NAME"].values.tolist()
@@ -310,11 +314,11 @@ elif option == "Inference":
                 pd_tables = df_tables.to_pandas()
                 list_tables = pd_tables["TABLE_NAME"].values.tolist()
 
-                table_orig = st.selectbox("Select Table for Inference:", list_tables)
+                table_orig = "DATA." + st.selectbox("Select Table for Inference:", list_tables)
 
             with col_target_table:
                 if (model_name != "") & (table_orig != ""):
-                    def_output_value = model_name + "_" + table_orig + "_INFERENCE"
+                    def_output_value = table_orig + "_" + model_name + "_INF"
                 else:
                     def_output_value = "OUTPUT"
                 target_table = st.text_input ("Name output table:", value=def_output_value)
@@ -332,7 +336,7 @@ elif option == "Inference":
 elif option == "Inference Runs":
 
     with st.container():
-        df_inference_runs = session.table('internal.inference_runs')
+        df_inference_runs = session.table('inference_runs')
         pd_inference_runs = df_inference_runs.to_pandas()
         
         st.dataframe(pd_inference_runs)
