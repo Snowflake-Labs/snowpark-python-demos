@@ -7,15 +7,19 @@ dependencies:
   - snowflake-snowpark-python[pandas]>=0.10.0
   - pandas
   - numpy
-  - scikit-learn
-  - xgboost
+  - scikit-learn=1.2.1
+  - xgboost=1.7.3
   - lightgbm
   - scipy
   - seaborn
   - matplotlib
+  - sqlalchemy==1.4.39
+  - tqdm==4.64.1
+  - colorlog==5.0.1
   - cachetools
   - pip
   - notebook
+  - joblib==1.1.1
   - pip:
     - imbalanced-learn
     - optuna
