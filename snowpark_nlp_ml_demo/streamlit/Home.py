@@ -18,7 +18,7 @@ def main():
         # resource_files
     for line in readme_line:
         readme_buffer.append(line)
-    
+
     st.markdown(''.join(readme_buffer))
 
     # with open("README.md", 'r') as f:

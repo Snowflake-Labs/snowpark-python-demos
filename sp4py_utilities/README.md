@@ -1,6 +1,6 @@
 # sp4py_utilities
 
-## 1. Overview 
+## 1. Overview
 Example of how scikit-learn preprocessing functionality can be implemented using Snowpark for Python, enabling to do most of the preprocessing of data within Snowflake.
 
 ## 2. Prerequisite
@@ -13,16 +13,16 @@ Example of how scikit-learn preprocessing functionality can be implemented using
    ```
 
 ## 3. What you'll learn
-This example shows how Snowpark for Python can be extended with similar functionality as scikit-learn preprocessing. 
+This example shows how Snowpark for Python can be extended with similar functionality as scikit-learn preprocessing.
 
 ## 4. Usage/Steps
 ### Preprocessing
 A module for data preprocessing of numeric and categorical features/columns using Snowpark DataFrames.
 
-The functions should in most cases follow the [sklearn.preprocessing](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing) 
+The functions should in most cases follow the [sklearn.preprocessing](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing)
 library with fit, transform etc methods and mostly the same parameters.
 
-If the fitted scaler/encoder is to be used with a Python UDF then the **udf_transform** module needs to be used for the 
+If the fitted scaler/encoder is to be used with a Python UDF then the **udf_transform** module needs to be used for the
 transformation.
 
 In order to use the module download the **sp4py_preprocessing** folder and make sure it is visible to your python environment.
@@ -52,7 +52,7 @@ output_cols = ["MedInc_scaled", "AveOccup_scaled"]
 
 # Create a MinMax Scaler object that will scale the input_cols and return scaled values using output_cols
 mms = pp.MinMaxScaler(input_cols=input_cols, output_cols=output_cols)
-# Fit the values needed for the scaler for each of the input_cols 
+# Fit the values needed for the scaler for each of the input_cols
 mms.fit(df_housing)
 # Scale the input_cols and return the scaled values in the output_cols in the returned Snowpark DataFrame, the actual
 # scaling are not done until a action method is called ie show(), collect() etc.
@@ -85,7 +85,7 @@ ohe_tr_df = ohe.transform(df_churn)
 ### UDF Transform
 A module for using the fitted scalers/encoders created with the preprocessing module in Python UDFs.
 
-In order to use the module download the **udf_transform** folder and make sure it is visible to your python environment 
+In order to use the module download the **udf_transform** folder and make sure it is visible to your python environment
 and if using it for Python UDFs you also need to upload it to Snowflake, the simplest way is by using **add_imports**
 
 For more examples see the [**udf_transform_demo** notebook](udf_transform_demo.ipynb).

@@ -7,7 +7,7 @@ In this example, you will be able to use Snowpark for Python, along with your fa
 Using rental listings we would like to train a ML model to estimate the rent price of our sale listing
 
 
-### Using rental listings we would like to train a ML model to estimate the rent price of our sale listing : 
+### Using rental listings we would like to train a ML model to estimate the rent price of our sale listing :
 
 ![title](img/BusinessUseCase.png)
 
@@ -29,7 +29,7 @@ Using rental listings we would like to train a ML model to estimate the rent pri
    ```
 * Jupyter or JupyterLab
 
-## 3. What you'll learn  
+## 3. What you'll learn
 
 - Get an understanding on how to implement an end-to-end ML pipeline using Snowpark for Python.
 - Develop using Snowpark for Python API, and Snowpark for Python UDFs.
@@ -39,7 +39,7 @@ Using rental listings we would like to train a ML model to estimate the rent pri
 
 ## 4. Usage/Steps
 
-1. Open terminal and clone this repo or use GitHub Desktop : 
+1. Open terminal and clone this repo or use GitHub Desktop :
 
     `git clone https://github.com/Snowflake-Labs/snowpark-python-examples`
 
@@ -49,7 +49,7 @@ Using rental listings we would like to train a ML model to estimate the rent pri
 
 3. Paste the URL in a browser window and once JupyterLab comes up, switch to the work directory and update `creds.json` to reflect your snowflake environment.
 
-4. Run through the RealEstateRentabilityPrediction_Setup Notebook. This will create the database and tables needed for this demo. 
+4. Run through the RealEstateRentabilityPrediction_Setup Notebook. This will create the database and tables needed for this demo.
 
 5. Then you can now run the RealEstateRentabilityPrediction_Demo.
 

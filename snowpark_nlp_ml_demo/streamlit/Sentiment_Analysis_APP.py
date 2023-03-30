@@ -51,13 +51,13 @@ def create_snowflake_connexion_tmp():
 
 # #### Train function
 def train_model_review_pipline(session : Session, train_dataset_name: str) -> Variant:
-    
+
     from nltk.corpus import stopwords
     import sklearn.feature_extraction.text as txt
     from sklearn import svm
     import os
     from joblib import dump
-        
+
     train_dataset = session.table(train_dataset_name)
     train_dataset_flag = train_dataset.withColumn("SENTIMENT_FLAG", fn.when(train_dataset.SENTIMENT == "positive", 1)
                                      .otherwise(2))
@@ -65,7 +65,7 @@ def train_model_review_pipline(session : Session, train_dataset_name: str) -> Va
     train_y = train_dataset_flag.toPandas().SENTIMENT_FLAG.values
     print('Taille train x : ', len(train_x))
     print('Taille train y : ', len(train_y))
-    
+
     print('Configuring parameters ...')
     # bags of words: parametrage
     analyzer = u'word' # {‘word’, ‘char’, ‘char_wb’}
@@ -76,7 +76,7 @@ def train_model_review_pipline(session : Session, train_dataset_name: str) -> Va
     binary=True # presence coding
     svm_max_iter = 100
     svm_c = 1.8
-    
+
     print('Building Sparse Matrix ...')
     vec = txt.CountVectorizer(
         token_pattern=token, \
@@ -84,34 +84,34 @@ def train_model_review_pipline(session : Session, train_dataset_name: str) -> Va
         analyzer=analyzer,\
         max_df=max_df, \
         min_df=min_df, \
-        vocabulary=None, 
+        vocabulary=None,
         binary=binary)
 
     # pres => normalisation
     bow = vec.fit_transform(train_x)
     print('Taille vocabulaire : ', len(vec.get_feature_names_out()))
-    
+
     print('Fitting model ...')
     model = svm.LinearSVC(C=svm_c, max_iter=svm_max_iter)
     print(model.fit(bow, train_y))
-    
+
     # #### Create a stage to store the model
     session.sql("CREATE STAGE IF NOT EXISTS MODELS").collect()
-    
+
     # Upload the Vectorizer (BOW) to a stage
     print('Upload the Vectorizer (BOW) to a stage')
     model_output_dire = '/tmp'
     model_file = os.path.join(model_output_dire, 'vect_review.joblib')
     dump(vec, model_file, compress=True)
     session.file.put(model_file, "@MODELS", auto_compress=False, overwrite=True)
-    
+
     # Upload trained model to a stage
     print('Upload trained model to a stage')
     model_output_dire = '/tmp'
     model_file = os.path.join(model_output_dire, 'model_review.joblib')
     dump(model, model_file, compress=True)
     session.file.put(model_file, "@MODELS", auto_compress=False, overwrite=True)
-    
+
     return {"STATUS": "SUCCESS", "R2 Score Train": str(model.score(bow, train_y))}
 
 
@@ -119,13 +119,13 @@ def train_model_review_pipline(session : Session, train_dataset_name: str) -> Va
 import cachetools
 @cachetools.cached(cache={})
 def load_file(filename):
-    
+
     import joblib
     import sys
     import os
-    
+
     import_dir = sys._xoptions.get("snowflake_import_directory")
-    
+
     if import_dir:
         with open(os.path.join(import_dir, filename), 'rb') as file:
             m = joblib.load(file)
@@ -164,18 +164,18 @@ def train_model (session, table, cwh, cwh_size, use_optimized):
     if (use_optimized):
         cmd = "alter warehouse " + cwh + " suspend"
         session.sql(cmd).collect()
-    
+
         cmd = "alter warehouse " + cwh + " set warehouse_size = '2X-LARGE'"
         session.sql(cmd).collect()
-    
+
         cmd = "alter warehouse " + cwh + " set WAREHOUSE_TYPE = 'SNOWPARK-OPTIMIZED'"
         session.sql(cmd).collect()
-    
+
     st.write("Register a Store Procedure : train_model_review_pipline")
     session.sproc.register(func=train_model_review_pipline, name=train_function_name, replace=True)
     st.write("Call the Store Procedure : train_model_review_pipline")
     session.call(train_function_name, table)
-    
+
     # Import the needed files from the stage
     st.write("Import models : vect_review and model_review")
     session.add_import("@MODELS/model_review.joblib")
@@ -185,25 +185,25 @@ def train_model (session, table, cwh, cwh_size, use_optimized):
     st.write("Deploy an UDF called : predict_review for Inference (Prediction)")
     @udf(name='predict_review', session=session, is_permanent = False, stage_location = '@MODELS', replace=True)
     def predict_review(args: list) -> float:
-        
+
         import sys
         import pandas as pd
         from joblib import load
 
         model = load_file("model_review.joblib")
         vec = load_file("vect_review.joblib")
-            
+
         features = list(["REVIEW", "SENTIMENT_FLAG"])
-        
+
         row = pd.DataFrame([args], columns=features)
         bowTest = vec.transform(row.REVIEW.values)
-        
+
         return model.predict(bowTest)
 
     if (use_optimized):
         cmd = "alter warehouse " + cwh + " suspend"
         session.sql(cmd).collect()
-    
+
         cmd = "alter warehouse " + cwh + " set WAREHOUSE_TYPE = 'STANDARD'"
         session.sql(cmd).collect()
 
@@ -241,7 +241,7 @@ def assess_performance_df(y_pred, y_test):
 st.markdown("""
             <style>
 
-            
+
                 div.stButton > button:first-child {
                     background-color: #50C878;color:white; border-color: none;
                 }
@@ -255,7 +255,7 @@ with st.sidebar:
                             menu_icon="menu-button-wide", default_index=0,
                             styles={
             "container": {"padding": "5!important", "background-color": "white","font-color": "#249dda"},
-            "icon": {"color": "#31c0e7", "font-size": "25px"}, 
+            "icon": {"color": "#31c0e7", "font-size": "25px"},
             "nav-link": {"font-size": "16px", "text-align": "left", "margin":"0px", "--hover-color": "white"},
             "nav-link-selected": {"background-color": "7734f9"},
         })
@@ -263,7 +263,7 @@ with st.sidebar:
 
 from Home import *
 
-if option == 'Home':    
+if option == 'Home':
     main()
 
 elif option == "Setup":
@@ -278,7 +278,7 @@ elif option == "Setup":
             for statement in tab:
                 if statement and statement != "":
                     session.sql(statement).collect()
-                    st.write(statement)            
+                    st.write(statement)
 
     st.markdown('----')
 
@@ -297,7 +297,7 @@ elif option == "Load Data":
             # open zipped dataset
             with zipfile.ZipFile("../data/TRAIN_DATASET.zip") as z:
             # open the csv file in the dataset
-                with z.open("TRAIN_DATASET.csv") as f:        
+                with z.open("TRAIN_DATASET.csv") as f:
                     # read the dataset
                     pandas_df = pd.read_csv(f)
                     #pandas_df = pd.read_csv("../data/Dataset/TRAIN_DATASET.csv")
@@ -310,7 +310,7 @@ elif option == "Load Data":
         if st.button(' ▶️  Start loading test data'):
             with zipfile.ZipFile("../data/TEST_DATASET.zip") as z:
                 # open the csv file in the dataset
-                with z.open("TEST_DATASET.csv") as f:        
+                with z.open("TEST_DATASET.csv") as f:
                     # read the dataset
                     pandas_df = pd.read_csv(f)
                     #pandas_df = pd.read_csv("../data/Dataset/TRAIN_DATASET.csv")
@@ -327,24 +327,24 @@ elif option == "Analyze":
     with st.container():
         df_tables = session.table('information_schema.tables').filter(col("table_schema") == schema_name).select(col("table_name"), col("row_count"), col("created"))
         pd_tables = df_tables.to_pandas()
-        
+
         st.subheader('Tables available')
         st.dataframe(pd_tables)
-        
+
     with st.container():
-        
+
         list_tables_names = pd_tables["TABLE_NAME"].values.tolist()
         st.subheader('Analyze Dataset')
         table_to_print = st.selectbox("Select table to describe statistics :", list_tables_names)
-        
+
         if (table_to_print):
             table_to_print = schema_name + "." + table_to_print
-        
+
             df_table = session.table(table_to_print)
 
             pd_table = df_table.limit(10).to_pandas()
             pd_describe = df_table.describe().to_pandas()
-            
+
             with st.expander("Statistics", False):
                 col0, col1, col2 = st.columns(3)
 
@@ -356,7 +356,7 @@ elif option == "Analyze":
                     positive = df_table.filter(col(target_column_name) == 'positive').count()
                     st.metric(label="Positive", value=positive)
 
-                with col2:                
+                with col2:
                     negative = df_table.filter(col(target_column_name) == 'negative').count()
                     st.metric(label="Negative", value=negative)
 
@@ -367,22 +367,22 @@ elif option == "Analyze":
             with st.expander("Data Description", False):
                 st.subheader('Data Description')
                 st.dataframe(pd_describe)
-        
+
     st.markdown('----')
 
 elif option == "Train Model":
     session = create_snowflake_connexion()
 
     with st.container():
-        
+
         st.subheader("Train Dataset")
 
         df_tables = session.table('information_schema.tables').filter(col("table_schema") == schema_name).select(col("table_name"))
         pd_tables = df_tables.to_pandas()
-        
+
         list_tables_names = pd_tables["TABLE_NAME"].values.tolist()
         table_to_train = st.selectbox("Select table to train model :", list_tables_names)
-        
+
         if (table_to_train):
             table_to_train = schema_name + "." + table_to_train
 
@@ -396,22 +396,22 @@ elif option == "Train Model":
                 'To change the WH size, select one :',
                 ('Medium', 'Large', 'X-Large', '2X-Large', '3X-Large', '4X-Large'))
                 st.write('You selected:', cwh_size_option)
-                
+
                 cwh = session.sql("select current_warehouse()").collect()
                 cwh = str(cwh[0])
                 cwh = cwh.replace("CURRENT_WAREHOUSE","").replace(")", "").replace("Row((=","")\
                             .replace("'","")
-                
+
                 cmd = "show warehouses like '" + cwh + "'"
                 cwh_size = session.sql(cmd).collect()
-                
+
                 if cwh_size_option:
                     cmd = "ALTER WAREHOUSE " + cwh + " set warehouse_size = '" + cwh_size_option + "'"
                     session.sql(cmd).collect()
                     cwh_size = cwh_size_option
                 else:
                     cwh_size = cwh_size[0]["size"]
-                
+
                 #with st.container():
                 with st.expander("See Current Configuration", False):
                     col1, col2 = st.columns(2)
@@ -426,21 +426,21 @@ elif option == "Train Model":
                         st.write ('SVM')
                         st.write(cwh)
                         st.write(cwh_size)
-                        
+
                 st.subheader("Run Model")
                 #col1, col2 = st.columns(2)
-    
+
                 with st.container():
                     col1, col2 = st.columns([1, 0.2])
                     with col1:
                         use_optimized = st.checkbox('Use Optimized Warehouse for Large Trainings')
-                    
+
                     with col2:
-                        st.button('▶️  Train Model', on_click=train_model, args=(session, table_to_train, 
+                        st.button('▶️  Train Model', on_click=train_model, args=(session, table_to_train,
                                     cwh, cwh_size, use_optimized))
-                        
+
     st.markdown('----')
-        
+
 elif option == 'Model Monitoring':
     session = create_snowflake_connexion()
 
@@ -461,7 +461,7 @@ elif option == "Model Catalog":
     session = create_snowflake_connexion()
 
     st.subheader('Models')
-    
+
     with st.container():
         data = session.sql("LIST @MODELS")
         st.write(data)
@@ -477,24 +477,24 @@ elif option == "Inference":
         st.subheader('Statistics')
         test_dataset = session.table("TEST_DATASET")
         new_df = test_dataset.withColumn("SENTIMENT_FLAG", fn.when(test_dataset.SENTIMENT == "positive", 1)
-                                            .otherwise(2))        
+                                            .otherwise(2))
         df_predict = new_df.select(new_df.REVIEW, new_df.SENTIMENT, new_df.SENTIMENT_FLAG, \
                 fn.call_udf("predict_review", fn.array_construct(col("REVIEW"), col("SENTIMENT_FLAG"))).alias('PREDICTED_REVIEW'))
         df_predict.write.mode('overwrite').saveAsTable('REVIEW_PREDICTION')
         #st.write(new_df.count())
-        
+
         col0, col1, col2 = st.columns(3)
-        
+
         with st.container():
             with col0 :
                 total = new_df.count()
                 st.metric(label="Total", value=total)
-        
+
             with col1:
                 positive = df_predict.filter(col(target_column_name) == 'positive').count()
                 st.metric(label="Positive", value=positive)
 
-            with col2:                
+            with col2:
                 negative = df_predict.filter(col(target_column_name) == 'negative').count()
                 st.metric(label="Negative", value=negative)
 
@@ -504,7 +504,7 @@ elif option == "Inference":
         st.dataframe(new_df.to_pandas())
 
     with subtab_accuracy:
-        st.subheader('Score')        
+        st.subheader('Score')
         df_predict = session.table("REVIEW_PREDICTION")
 
         #df_score = assess_performance_df(df_predict.toPandas().PREDICTED_REVIEW, df_predict.toPandas().SENTIMENT_FLAG)
@@ -536,7 +536,7 @@ elif option == "Inference Runs":
         df_predict = session.sql("SELECT REVIEW, PREDICTED_REVIEW FROM REVIEW_PREDICTION")
         df_predict = df_predict.withColumn("PREDICTED_REVIEW_LABEL", fn.when(df_predict.PREDICTED_REVIEW == 1, "positive") \
                                             .otherwise("negative"))
-        
+
         st.dataframe(df_predict.to_pandas())
 
 elif option == "Clean up":
