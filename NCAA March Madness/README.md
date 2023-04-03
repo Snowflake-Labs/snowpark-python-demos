@@ -4,6 +4,15 @@ In this series of notebooks, we'll demonstrate how to set up a Snowflake environ
 
 These examples showcase some of the work conducted for the [March Machine Learning Mania 2023](https://www.kaggle.com/competitions/march-machine-learning-mania-2023/data) Kaggle competition and are inspired by the article [Predicting the Unpredictable — March Madness using Snowpark and Hex](https://medium.com/snowflake/predicting-the-unpredictable-march-madness-using-snowpark-and-hex-f16dc4f57add) by [Chase Romano](https://medium.com/@chasea.romano) and [Tyler White](https://medium.com/@btylerwhite).
 
+### Setting it up.
+
+Clone the repo. If you're using macOS or Linux, execute the following commands:
+```
+python3.8 -m venv venv
+source venv/bin/activate
+pip install -r NCAA\ March\ Madness/requirements.txt
+```
+
 ## Solution Overview
 
 Insert image here.

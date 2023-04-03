@@ -11,3 +11,7 @@ repos:
     hooks:
       - id: nbqa-isort
       - id: nbqa-pyupgrade
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.6.1
+    hooks:
+      - id: nbstripout
