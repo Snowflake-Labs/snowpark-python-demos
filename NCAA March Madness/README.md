@@ -15,7 +15,7 @@ pip install -r NCAA\ March\ Madness/requirements.txt
 
 ## Solution Overview
 
-Insert image here.
+![image](https://user-images.githubusercontent.com/50381805/230445402-5e616b05-f87c-4df2-b2c4-c1e3ae647c1a.png)
 
 ### Preparing the Environment
 
