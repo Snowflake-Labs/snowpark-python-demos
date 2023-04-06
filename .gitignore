@@ -161,3 +161,9 @@ cython_debug/
 
 # macOS
 .DS_Store
+
+# Downloadable Data
+march-machine-learning-mania-2023.zip
+
+# Model Data for Local Testing
+NCAA March Madness/notebooks/tmp
