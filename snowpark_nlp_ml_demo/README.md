@@ -71,7 +71,7 @@ With the Streamlit APP you can run all the Demo by following the Menu options st
 
 Launch the App using this :
 ```bash
-streamlit ./streamlit/run Sentiment_Analysis_APP.py
+streamlit run ./streamlit/Sentiment_Analysis_APP.py
 ```
 
 2. **Notebook** :
