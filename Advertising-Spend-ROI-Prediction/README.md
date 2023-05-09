@@ -33,11 +33,10 @@ https://user-images.githubusercontent.com/1723932/175127637-9149b9f3-e12a-4acd-a
 
 ## Setup
 
----
 ```sql
-  USE ROLE ACCOUNTADMIN;
+  USE ROLE SYSADMIN;
 ```
----
+
 ### **Step 1** -- Create Tables, Load Data and Setup Stages
 
 An example database, tables, stages, and file formats will be configured and created as you're executing the (Snowpark_For_Python.ipynb) notebook.
@@ -46,9 +45,8 @@ These stages will be configured to use data hosted on a publicly accessible S3 b
 
 For the Streamlit application, you will need to create a table BUDGET_ALLOCATIONS_AND_ROI that holds the last six months of budget allocations and ROI.
 
----
 ```sql
-  CREATE or REPLACE TABLE BUDGET_ALLOCATIONS_AND_ROI (
+  CREATE or REPLACE TABLE SNOWPARK_ROI_DEMO.AD_DATA.BUDGET_ALLOCATIONS_AND_ROI (
     MONTH varchar(30),
     SEARCHENGINE integer,
     SOCIALMEDIA integer,
@@ -66,7 +64,7 @@ For the Streamlit application, you will need to create a table BUDGET_ALLOCATION
   ('May',95,95,10,95,6.246),
   ('June',35,50,35,85,8.22);
 ```
----
+
 ## Notebook and Streamlit App
 
 ### **Step 1** -- Clone Repo
