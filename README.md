@@ -16,4 +16,4 @@ Snowpark For Python: [API Source Code](https://github.com/snowflakedb/snowpark-p
 
 ## Developer Resources
 
-For other developer resources, please visit http://developers.snowflake.com/get-started.
+For more resources, please visit [Snowpark Day](https://www.snowflake.com/webinar/virtual-hands-on-labs/snowpark-day-april2022/).
