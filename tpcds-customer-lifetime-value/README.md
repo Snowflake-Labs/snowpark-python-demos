@@ -25,10 +25,11 @@ Snowflake-ML enables data scientists to write code similar to what they would in
 With Snowflake-ML, you can leverage snowflake.ml.modeling.preprocessing and snowflake.ml.modeling for transformation and training. The **.fit()** method of a transformer, like OneHotEncoder, or an algorithm, like XGBRegressor, facilitates computation pushdown to Snowflake, significantly simplifying the process of machine learning model building.
 
 Notably, the pre-processing functions like **.filter()** utilize Snowflake's SQL engine for distributed multi-node execution, effectively handling large amounts of data without running into memory or computational challenges. The algorithms available are identical to those in established libraries such as Scikit-Learn, XGBoost, and LightGBM, but executed securely within Snowflake's Python sandbox.  
-  
-  
 
-![Snowflake ML Concept](./snowflakeml.png)
+
+.
+![Snowflake ML Concept](./snowflakeml.png) 
+  
 
 
 **Before (Model Training):** Prior to Snowpark ML, our standard process for model training involved creating a stored procedure.
