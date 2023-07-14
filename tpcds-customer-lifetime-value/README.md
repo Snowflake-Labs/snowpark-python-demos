@@ -27,7 +27,9 @@ With Snowflake-ML, you can leverage snowflake.ml.modeling.preprocessing and snow
 
 Notably, the pre-processing functions utilize Snowflake's SQL engine for distributed multi-node execution, effectively handling large amounts of data without running into memory or computational challenges. The algorithms available are identical to those in established libraries such as Scikit-Learn, XGBoost, and LightGBM, but executed securely within Snowflake's Python sandbox.
 
+
 ![Snowflake ML Concept](./snowflakeml.png)
+
 
 **Before (Model Training):** Prior to Snowpark ML, our standard process for model training involved creating a stored procedure
 
@@ -38,7 +40,7 @@ involved creating and using UDF (user defined functions).
 
 This advancement represents a dramatic reduction in complexity and an increase in security, demonstrating the promise of Snowflake's ongoing evolution.
 
-Snowpark ML Modeling is a collection of Python APIs for preprocessing data and training models. By performing these tasks within Snowflake, Snowpark ML lets you:
+Snowpark ML Modeling is a collection of Python APIs for preprocessing data and training models. Snowpark ML lets you:
 1. Transform your data and train your models without moving your data out of Snowflake.
 2. Work with APIs similar to those you’re already familiar with, such as scikit-learn.
 3. Keep your ML pipeline running within Snowflake’s security and governance frameworks.
