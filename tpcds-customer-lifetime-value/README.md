@@ -26,9 +26,11 @@ With Snowflake-ML, you can leverage snowflake.ml.modeling.preprocessing and snow
 
 Notably, the pre-processing functions like **.filter()** utilize Snowflake's SQL engine for distributed multi-node execution, effectively handling large amounts of data without running into memory or computational challenges. The algorithms available are identical to those in established libraries such as Scikit-Learn, XGBoost, and LightGBM, but executed securely within Snowflake's Python sandbox.  
 
+
 __
 ![Snowflake ML Concept](./snowflakeml.png) 
 __
+
 
 
 **Before (Model Training):** Prior to Snowpark ML, our standard process for model training involved creating a stored procedure.
