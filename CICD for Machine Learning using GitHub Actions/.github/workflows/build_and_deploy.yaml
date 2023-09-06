@@ -1,0 +1,71 @@
+name: Deploy ML_Snowpark_CI_CD
+
+# Controls when the action will run. 
+on:
+  push:
+    branches:
+      - master
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Python packages
+        run: pip install -r requirements.txt
+
+      - name: Download SnowSQL
+        run:  curl -O https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/linux_x86_64/snowsql-1.2.9-linux_x86_64.bash
+      
+      - name: Install SnowSQL
+        run: SNOWSQL_DEST=~/bin SNOWSQL_LOGIN_SHELL=~/.profile bash snowsql-1.2.9-linux_x86_64.bash
+
+      - name: Configure snowcli
+        env:
+          SNOWSQL_ACCOUNT: ${{ secrets.SNOWSQL_ACCOUNT }}
+          SNOWSQL_USER: ${{ secrets.SNOWSQL_USER }}
+          SNOWSQL_PWD: ${{ secrets.SNOWSQL_PWD }}
+          SNOWSQL_ROLE: ${{ secrets.SNOWSQL_ROLE }}
+          SNOWSQL_WAREHOUSE: ${{ secrets.SNOWSQL_WAREHOUSE }}
+          SNOWSQL_DATABASE: ${{ secrets.SNOWSQL_DATABASE }}
+        run: |
+          mkdir -p ~/.snowsql
+          echo "[connections.dev]" > ~/.snowsql/config
+          echo "accountname = $SNOWSQL_ACCOUNT" >> ~/.snowsql/config
+          echo "username = $SNOWSQL_USER" >> ~/.snowsql/config
+          echo "password = $SNOWSQL_PWD" >> ~/.snowsql/config
+          echo "rolename = $SNOWSQL_ROLE" >> ~/.snowsql/config
+          echo "warehousename = $SNOWSQL_WAREHOUSE" >> ~/.snowsql/config
+          echo "dbname = $SNOWSQL_DATABASE" >> ~/.snowsql/config
+
+      - name: Test installation
+        run:  ~/bin/snowsql -v
+      
+      - name: Debug current directory
+        run: |
+          pwd
+          ls -al
+
+      # If this code works on your machine then we are good to go for deployment
+      - name: Test Python Connection 
+        run: python test/test_connection.py
+
+      # Deploying Stored Proc to process data incrementally
+      - name: Deploy SPROC using 05_process_data_incrementally.py
+        run: python source/05_process_data_incrementally.py
+
+      # Deploy data Streams and Tasks for scheduled inference
+      - name: Deploy the SQL script with SnowSQL
+        run: ~/bin/snowsql -c dev -f $GITHUB_WORKSPACE/source/06_orchestrate_jobs.sql
+  
+
