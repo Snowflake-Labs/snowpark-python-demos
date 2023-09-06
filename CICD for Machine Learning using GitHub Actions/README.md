@@ -2,6 +2,8 @@
 
 Machine Learning (ML) has transformed the way businesses analyze and interpret data. Yet, operationalizing ML models remains a challenge. As datasets grow and environments evolve, Continuous Integration/Continuous Deployment (CI/CD) becomes indispensable. In this demo, I'll showcases how to implement CI/CD for an ML workflow using Snowflake.
 
+**Medium Article Link**: https://medium.com/snowflake/ci-cd-for-machine-learning-within-snowflake-a-simple-approach-390cc4cbf8ef
+
 This repository contains code to demonstrate end-to-end machine learning development and deployment using Snowflake.
 
 ## Repository Structure
