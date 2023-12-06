@@ -1,0 +1,100 @@
+10001,1,Ice Cream,Freezing Point,10,Lemonade,Beverage,Cold Option,0.65,3.5
+10002,1,Ice Cream,Freezing Point,11,Sugar Cone,Dessert,Cold Option,2.5,6
+10003,1,Ice Cream,Freezing Point,12,Waffle Cone,Dessert,Cold Option,2.5,6
+10004,1,Ice Cream,Freezing Point,13,Two Scoop Bowl,Dessert,Cold Option,3,7
+10005,1,Ice Cream,Freezing Point,14,Bottled Water,Beverage,Cold Option,0.5,2
+10006,1,Ice Cream,Freezing Point,15,Bottled Soda,Beverage,Cold Option,0.5,3
+10007,1,Ice Cream,Freezing Point,16,Ice Tea,Beverage,Cold Option,0.75,3
+10008,1,Ice Cream,Freezing Point,17,Ice Cream Sandwich,Dessert,Cold Option,1,4
+10009,1,Ice Cream,Freezing Point,18,Mango Sticky Rice,Dessert,Cold Option,1.25,5
+10010,1,Ice Cream,Freezing Point,19,Popsicle,Dessert,Cold Option,0.5,3
+10011,2,BBQ,Smoky BBQ,21,Two Meat Plate,Main,Hot Option,9,14
+10012,2,BBQ,Smoky BBQ,22,Three Meat Plate,Main,Hot Option,10,17
+10026,3,Tacos,Guac n' Roll,37,Chicken Burrito,Main,Warm Option,3.25,12.5
+10027,3,Tacos,Guac n' Roll,38,Lean Burrito Bowl,Main,Warm Option,3.5,12.5
+10028,3,Tacos,Guac n' Roll,39,Fish Burrito,Main,Warm Option,3.75,12.5
+10029,4,Mac & Cheese,The Mac Shack,41,Standard Mac & Cheese,Main,Hot Option,3,8
+10030,4,Mac & Cheese,The Mac Shack,42,Buffalo Mac & Cheese,Main,Hot Option,6,10
+10031,4,Mac & Cheese,The Mac Shack,43,Lobster Mac & Cheese,Main,Hot Option,10,15
+10032,4,Mac & Cheese,The Mac Shack,44,Bottled Water,Beverage,Cold Option,0.5,2
+10033,4,Mac & Cheese,The Mac Shack,45,Bottled Soda,Beverage,Cold Option,0.5,3
+10034,4,Mac & Cheese,The Mac Shack,46,Ice Tea,Beverage,Cold Option,0.75,3
+10035,5,Ramen,Kitakata Ramen Bar,51,Creamy Chicken Ramen,Main,Hot Option,8,17.25
+10036,5,Ramen,Kitakata Ramen Bar,52,Spicy Miso Vegetable Ramen,Main,Hot Option,7,17.25
+10037,5,Ramen,Kitakata Ramen Bar,53,Tonkotsu Ramen,Main,Hot Option,7,17.25
+10013,2,BBQ,Smoky BBQ,23,Pulled Pork Sandwich,Main,Warm Option,7,12
+10014,2,BBQ,Smoky BBQ,24,Bottled Water,Beverage,Cold Option,0.5,2
+10015,2,BBQ,Smoky BBQ,25,Bottled Soda,Beverage,Cold Option,0.5,3
+10016,2,BBQ,Smoky BBQ,26,Ice Tea,Beverage,Cold Option,0.75,3
+10017,2,BBQ,Smoky BBQ,27,Spring Mix Salad,Snack,Cold Option,2.25,6
+10018,2,BBQ,Smoky BBQ,28,Rack of Pork Ribs,Main,Hot Option,11.25,21
+10019,2,BBQ,Smoky BBQ,29,Fried Pickles,Snack,Warm Option,1.25,6
+10020,3,Tacos,Guac n' Roll,31,Two Taco Combo Plate,Main,Warm Option,6,9
+10021,3,Tacos,Guac n' Roll,32,Three Taco Combo Plate,Main,Warm Option,7,11
+10022,3,Tacos,Guac n' Roll,33,Veggie Taco Bowl,Main,Warm Option,6,10
+10023,3,Tacos,Guac n' Roll,34,Bottled Water,Beverage,Cold Option,0.5,2
+10024,3,Tacos,Guac n' Roll,35,Bottled Soda,Beverage,Cold Option,0.5,3
+10025,3,Tacos,Guac n' Roll,36,Ice Tea,Beverage,Cold Option,0.75,3
+10076,11,Poutine,Revenge of the Curds,116,Ice Tea,Beverage,Cold Option,0.75,3
+10077,12,Gyros,Cheeky Greek,121,The King Combo,Main,Hot Option,12,20
+10078,12,Gyros,Cheeky Greek,122,Gyro Plate,Main,Hot Option,8,12
+10079,12,Gyros,Cheeky Greek,123,Greek Salad,Snack,Warm Option,4,11
+10080,12,Gyros,Cheeky Greek,124,Bottled Water,Beverage,Cold Option,0.5,2
+10081,12,Gyros,Cheeky Greek,125,Bottled Soda,Beverage,Cold Option,0.5,3
+10082,12,Gyros,Cheeky Greek,126,Ice Tea,Beverage,Cold Option,0.75,3
+10083,13,Chinese,Peking Truck,131,Combo Lo Mein,Main,Hot Option,6,13
+10084,13,Chinese,Peking Truck,132,Combo Fried Rice,Main,Warm Option,5,11
+10085,13,Chinese,Peking Truck,133,Wonton Soup,Main,Warm Option,2,6
+10086,13,Chinese,Peking Truck,134,Bottled Water,Beverage,Cold Option,0.5,2
+10087,13,Chinese,Peking Truck,135,Bottled Soda,Beverage,Cold Option,0.5,3
+10051,7,Vegetarian,Plant Palace,75,Bottled Soda,Beverage,Cold Option,0.5,3
+10052,7,Vegetarian,Plant Palace,76,Ice Tea,Beverage,Cold Option,0.75,3
+10053,8,Crepes,Le Coin des Crêpes,81,Breakfast Crepe,Main,Warm Option,5,12
+10054,8,Crepes,Le Coin des Crêpes,82,Chicken Pot Pie Crepe,Main,Hot Option,6,15
+10055,8,Crepes,Le Coin des Crêpes,83,Crepe Suzette,Snack,Warm Option,4,9
+10056,8,Crepes,Le Coin des Crêpes,84,Bottled Water,Beverage,Cold Option,0.5,2
+10057,8,Crepes,Le Coin des Crêpes,85,Bottled Soda,Beverage,Cold Option,0.5,3
+10058,8,Crepes,Le Coin des Crêpes,86,Ice Tea,Beverage,Cold Option,0.75,3
+10059,9,Ethiopian,Tasty Tibs,91,Lean Chicken Tibs,Main,Hot Option,5,11
+10060,9,Ethiopian,Tasty Tibs,92,Lean Beef Tibs,Main,Hot Option,6,13
+10061,9,Ethiopian,Tasty Tibs,93,Veggie Combo,Main,Warm Option,4,9
+10062,9,Ethiopian,Tasty Tibs,94,Bottled Water,Beverage,Cold Option,0.5,2
+10038,5,Ramen,Kitakata Ramen Bar,54,Bottled Water,Beverage,Cold Option,0.5,2
+10039,5,Ramen,Kitakata Ramen Bar,55,Bottled Soda,Beverage,Cold Option,0.5,3
+10040,5,Ramen,Kitakata Ramen Bar,56,Ice Tea,Beverage,Cold Option,0.75,3
+10041,6,Grilled Cheese,The Mega Melt,61,The Original,Main,Hot Option,1.5,5
+10042,6,Grilled Cheese,The Mega Melt,62,The Ranch,Main,Hot Option,2.4,6
+10043,6,Grilled Cheese,The Mega Melt,63,Miss Piggie,Main,Hot Option,2.6,6
+10044,6,Grilled Cheese,The Mega Melt,64,Bottled Water,Beverage,Cold Option,0.5,2
+10045,6,Grilled Cheese,The Mega Melt,65,Bottled Soda,Beverage,Cold Option,0.5,3
+10046,6,Grilled Cheese,The Mega Melt,66,Ice Tea,Beverage,Cold Option,0.75,3
+10047,7,Vegetarian,Plant Palace,71,Veggie Burger,Main,Hot Option,5,9
+10048,7,Vegetarian,Plant Palace,72,Seitan Buffalo Wings,Snack,Hot Option,4,7
+10049,7,Vegetarian,Plant Palace,73,The Salad of All Salads,Main,Warm Option,6,12
+10050,7,Vegetarian,Plant Palace,74,Bottled Water,Beverage,Cold Option,0.5,2
+10063,9,Ethiopian,Tasty Tibs,95,Bottled Soda,Beverage,Cold Option,0.5,3
+10064,9,Ethiopian,Tasty Tibs,96,Ice Tea,Beverage,Cold Option,0.75,3
+10065,10,Hot Dogs,Amped Up Franks,101,New York Dog,Main,Warm Option,4,8
+10066,10,Hot Dogs,Amped Up Franks,102,Chicago Dog,Main,Warm Option,4,9
+10067,10,Hot Dogs,Amped Up Franks,103,Coney Dog,Main,Warm Option,5,10
+10068,10,Hot Dogs,Amped Up Franks,104,Bottled Water,Beverage,Cold Option,0.5,2
+10069,10,Hot Dogs,Amped Up Franks,105,Bottled Soda,Beverage,Cold Option,0.5,3
+10070,10,Hot Dogs,Amped Up Franks,106,Ice Tea,Beverage,Cold Option,0.75,3
+10071,11,Poutine,Revenge of the Curds,111,The Classic,Main,Hot Option,4,12
+10072,11,Poutine,Revenge of the Curds,112,Mothers Favorite,Main,Hot Option,4.5,12
+10073,11,Poutine,Revenge of the Curds,113,The Kitchen Sink,Main,Hot Option,6,14
+10074,11,Poutine,Revenge of the Curds,114,Bottled Water,Beverage,Cold Option,0.5,2
+10075,11,Poutine,Revenge of the Curds,115,Bottled Soda,Beverage,Cold Option,0.5,3
+10088,13,Chinese,Peking Truck,136,Ice Tea,Beverage,Cold Option,0.75,3
+10089,14,Indian,Nani's Kitchen,141,Lean Chicken Tikka Masala,Main,Hot Option,10,17
+10090,14,Indian,Nani's Kitchen,142,Tandoori Mixed Grill,Main,Hot Option,11,18
+10091,14,Indian,Nani's Kitchen,143,Combination Curry,Main,Hot Option,9,15
+10092,14,Indian,Nani's Kitchen,144,Bottled Water,Beverage,Cold Option,0.5,2
+10093,14,Indian,Nani's Kitchen,145,Bottled Soda,Beverage,Cold Option,0.5,3
+10094,14,Indian,Nani's Kitchen,146,Ice Tea,Beverage,Cold Option,0.75,3
+10095,15,Sandwiches,Better Off Bread,151,Italian,Main,Cold Option,6,11
+10096,15,Sandwiches,Better Off Bread,152,Pastrami,Main,Cold Option,8,11
+10097,15,Sandwiches,Better Off Bread,153,Hot Ham & Cheese,Main,Hot Option,7,11
+10098,15,Sandwiches,Better Off Bread,154,Bottled Water,Beverage,Cold Option,0.5,2
+10099,15,Sandwiches,Better Off Bread,155,Bottled Soda,Beverage,Cold Option,0.5,3
+10100,15,Sandwiches,Better Off Bread,156,Ice Tea,Beverage,Cold Option,0.75,3
