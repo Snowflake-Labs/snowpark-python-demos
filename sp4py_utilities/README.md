@@ -1,3 +1,6 @@
+**Snowflake has now released Snowpark ML that is a Python library that has native preprocessing, model training and mlops that you should use instead of this, see https://docs.snowflake.com/en/developer-guide/snowpark-ml/index for more information**
+
+
 # sp4py_utilities
 
 ## 1. Overview
