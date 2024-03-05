@@ -4,26 +4,22 @@ channels:
   - nodefaults
 dependencies:
   - python=3.9
+  # Basics
+  - pandas==1.5.3
+  - numpy==1.23.5
+  # ML
+  - scikit-learn==1.2.2
+  - xgboost==1.7.3
+  - tensorflow
+  # Visualization
+  - scipy==1.10.1
+  - seaborn==0.12.2
+  - matplotlib==3.7.1
+  # Misc
+  - cloudpickle==2.0.0
+  - jupyter==1.0.0
+  - cachetools==4.2.2
+  - joblib==1.1.1
+  - snowflake-snowpark-python
+  - snowflake-ml-python
   - pip
-  - pip:
-    # Basics
-    - pandas==1.5.3
-    - numpy==1.23.5
-    # ML
-    - scikit-learn==1.2.2
-    - xgboost==1.7.3
-    - tensorflow
-    # Visualization
-    - scipy==1.10.1
-    - seaborn==0.12.2
-    - matplotlib==3.7.1
-    # Misc
-    - cloudpickle==2.0.0
-    - jupyter==1.0.0
-    - cachetools==4.2.2
-    - joblib==1.1.1
-    - imbalanced-learn==0.10.1
-    - torch==1.10.2
-    - pytorch-tabnet==3.1.1
-    - snowflake-snowpark-python
-    - snowflake_ml_python
