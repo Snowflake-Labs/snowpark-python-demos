@@ -1,0 +1,9 @@
+{
+	"account"	:"",
+	"user"		:"",
+	"password"	:"",
+	"role"		:"",
+	"warehouse"	:"",
+	"database"	:"github_archive_events",
+	"schema"	:"cybersyn"
+}
