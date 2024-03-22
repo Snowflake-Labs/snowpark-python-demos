@@ -1,5 +1,0 @@
-cachetools
-python-dotenv
-scikit-learn
-snowflake-snowpark-python[pandas]
-xgboost
