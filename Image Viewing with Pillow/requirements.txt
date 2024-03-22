@@ -1,4 +1,3 @@
 ipykernel
 Pillow
-python-dotenv
 snowflake-snowpark-python
